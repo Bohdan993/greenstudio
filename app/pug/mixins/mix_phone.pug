@@ -1,0 +1,8 @@
+mixin input(item)
+	input.input(
+		type=`${ item.type }`
+		name=`${ item.name }`
+		value=item.value ? item.value : null
+		placeholder=item.placeholder ? item.placeholder : null
+		required=item.required ? item.required : null
+	)&attributes(attributes)

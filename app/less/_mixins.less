@@ -1,0 +1,115 @@
+
+.fSize(@f, @f-min, @f-max, @w-min, @w-max) {
+	font-size: (@f/@w-max*100);
+
+	@media screen and (min-width: @w-max) {
+		font-size: @f-max;
+	}
+
+	@media screen and (max-width: @w-min) {
+		font-size: @f-min;
+	}
+}
+
+.fM(@mt:0, @mb:0, @mt-min, @mb-min, @w-min, @w-max) {
+	margin-top: (@mt/@w-max*100);
+	margin-bottom: (@mb/@w-max*100);
+
+
+
+	@media screen and (max-width: @w-min) {
+		margin-top: @mt-min;
+		margin-bottom:@mb-min;
+	}
+}
+
+
+
+.fP(@pt:0, @pb:0, @pt-min, @pb-min, @w-min, @w-max) {
+	padding-top: (@pt/@w-max*100);
+	padding-bottom: (@pb/@w-max*100);
+
+
+
+	@media screen and (max-width: @w-min) {
+		padding-top: @pt-min;
+		padding-bottom:@pb-min;
+	}
+}
+
+.fPa(@pt:0, @pb:0, @ptpx:0, @pbpx:0, @w-min, @w-max) {
+	padding-top: (@pt/@w-max*100);
+	padding-bottom: (@pb/@w-max*100);
+
+
+
+	@media screen and (max-width: @w-min) {
+		padding-top: @ptpx*(@w-min/@w-max);
+		padding-bottom:@pbpx*(@w-min/@w-max);
+	}
+}
+
+.fMa(@mt:0, @mb:0, @mtpx:0, @mbpx:0, @w-min, @w-max) {
+	margin-top: (@mt/@w-max*100);
+	margin-bottom: (@mb/@w-max*100);
+
+
+
+	@media screen and (max-width: @w-min) {
+		margin-top: @mtpx*(@w-min/@w-max);
+		margin-bottom:@mbpx*(@w-min/@w-max);
+	}
+}
+
+
+
+.transition-delay(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    transition-delay: (100ms + (@i * 30));
+  }
+  .transition-delay(@n, (@i + 1));
+}
+
+
+
+.animation-delay(@n, @i: 1) when (@i =< @n) {
+	&:nth-child(@{i}) {
+	animation-delay: (100ms + (@i * 30));
+	}
+	.animation-delay(@n, (@i + 1));
+  }
+
+  .animation-delay2(@n, @i: 1) when (@i =< @n) {
+	&:nth-child(@{i}) {
+	animation-delay: (150ms + (@i * 120));
+	}
+	.animation-delay2(@n, (@i + 1));
+  }
+
+
+
+
+
+@base:1920;
+/* Формула для перевода пикселей в проценты */
+.pxtp( @pixel:@base ) {
+  @return: @pixel /@base  * 100%+0px;
+}
+
+.flex(@justify-content: space-between, @align-items: center, @flex-direction: row, @flex-wrap: nowrap){
+	display: flex;
+	justify-content: @justify-content;
+	align-items:  @align-items;
+	flex-direction:  @flex-direction;
+	flex-wrap:  @flex-wrap;
+}
+
+.ba() {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}

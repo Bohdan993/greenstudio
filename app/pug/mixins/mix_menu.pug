@@ -1,0 +1,75 @@
+-
+	var menu = [
+		{
+			text: 'Трубопроводная арматура', 
+			url: '#offer', 
+			content:
+			[
+				{text:'Трубопроводная арматура немецкая', url: '#1'},
+				{text:'Трубопроводная арматура французская', url: '#2'}, 
+				{text:'Трубопроводная арматура голландская', url: '#3'}
+			]
+		},
+		{
+			text: 'Кабеля и проводники', 
+			url: '#howwork', 
+			content:
+			[
+				{text:'Кабеля и проводники голландские', url: '#1'},
+				{text:'Кабеля и проводники австралийские', url: '#2'}, 
+				{text:'Кабеля и проводники белорусские', url: '#3'}
+			]
+		},
+		{
+			text: 'Дополнительное оборудование', 
+			url: '#case', 
+			content:
+			[
+				{text:'Дополнительное оборудование первое', url: '#1'},
+				{text:'Дополнительное оборудование второе', url: '#2'}, 
+				{text:'Дополнительное оборудование третье', url: '#3'}
+			]
+		},
+		{
+			text: 'Контакты', 
+			url: '#contacts', 
+			content:[
+
+			]
+		},
+	];
+
+//- mixin menu
+//- 	nav.menu
+//- 		ul.menu__list
+//- 			each item in menu
+//- 				li.menu__item
+//- 					a.menu__link(href=item.url ? item.url : '#')= item.text
+mixin menu2
+	.header-nav
+		nav.header-nav__navigation
+			ul.header-nav__list
+				each item, index in menu
+					li.header-nav__list-item(
+						class=index === menu.length - 1 ? 'mobile-link' : null
+						class=index === menu.length - 2 ? 'mobile-link' : null
+					)
+						a.header-nav__link.go-to(
+						href=item.url ? item.url: '#'
+						)= item.text
+
+
+mixin menu3
+	nav.menu__table-nav
+		ul.menu__table-ul
+			.close-burger
+				span.close-burger__span
+				span.close-burger__span
+			each item, index in menu
+				li.menu__table-item
+					div.menu__table-link()= item.text
+						+svg2('down-arrow')
+						ul.inner-ul
+							each itemm, indexx in item.content
+								li
+									a(href=itemm.url? itemm.url : '#')=itemm.text

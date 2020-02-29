@@ -1,0 +1,13 @@
+mixin letterTitle(title)
+    h2&attributes(attributes).h2-title
+        - for (let letter of title)
+            if(letter == ' ')
+                span.empty_2=''
+            else if(letter == '|')
+                br
+            else if(letter == '%')
+                br.mobile-br
+            else if(letter == '*')
+                br.tablet-br
+            else
+                span=letter

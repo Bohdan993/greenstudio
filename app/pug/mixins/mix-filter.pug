@@ -1,0 +1,5 @@
+mixin filter(filters)
+		li.top__filter-wrap-list-item
+			ul.top__filter-wrap-list
+				each elem, ind in filters
+					li.top__filters-list-item(class=elem[2], data-filter=elem[1])=elem[0]

@@ -1,0 +1,15 @@
+-
+	var inputs = [
+		{text: 'E-mail', type: 'email'},
+		{text: 'Ваше повідомлення', type: 'text'},
+		{text: 'Відправити', type: 'submit'},
+	];
+
+mixin foo
+	each item, index in inputs
+		input.foo__input(
+			placeholder=item.text ? item.text: ''
+			type=item.type ? item.type: ''
+			value=index === inputs.length - 1 ? item.text : null
+			class=index === inputs.length - 1 ? 'main-btn' : null
+		)

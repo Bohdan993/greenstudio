@@ -1,0 +1,28 @@
+//- -
+//-     var words = [
+//-         'Пример работ',
+//-         'Гарантии',
+//-         'Результат работ',
+//-         'О нас',
+//-         'Отзывы',
+//-         'Меню'
+//-     ]
+
+//-     var nbsp = `nbsp;`
+
+
+
+mixin letterMenu(menu)
+    nav.header__menu-nav
+        ul.header__menu-list
+            each elem, ind in menu
+                - if (elem !== null) 
+                    li.header__menu-list-item(class=ind == 0 ? 'list-item_mobile': ind==menu.length - 1 ? 'list-item_mobile open-button': null)
+                        a.header__menu-list-link.go-to(href=elem.link)
+                            - for (let letter of elem.title)
+                                if(letter == ' ')
+                                    span.empty=''
+                                else
+                                    span=letter
+                    
+                        

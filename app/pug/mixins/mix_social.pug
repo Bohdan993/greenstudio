@@ -1,0 +1,20 @@
+-
+	var social = [
+		{link: 'img/facebook.png', href: '', alt: 'Фейсбук'},
+		{link: 'img/instagram.png', href: '', alt: 'Інстаграм'},
+		{link: 'img/youtube.png', href: '', alt: 'Ютуб'},
+		{link: 'img/printest.png', href: '', alt: 'Пінтерgест'},
+	]
+
+mixin social
+	.header-controls__social
+		each item in social
+			a.header-controls__link(href=item.href ? item.href : '#', target="_blank")
+				img.header-controls__img(src=item.link, alt=item.alt )
+
+
+mixin social2
+	.menu__table_social
+		each item, index in social
+			a.menu__table-link_social(href=item.href ? item.href : '#', target="_blank")
+				img.menu__table-img_social(src=item.link, alt=item.alt)

@@ -1,0 +1,35 @@
+-
+	var cityies = [
+		{text: 'Вкажіть місто'},
+		{text: 'Вінниця‎'},
+		{text: 'Дніпро'},
+		{text: 'Донецьк'},
+		{text: 'Запоріжжя'},
+		{text: 'Івано-Франківськ'},
+		{text: 'Київ'},
+		{text: 'Кропивницький'},
+		{text: 'Луганськ'},
+		{text: 'Луцьк'},
+		{text: 'Львів'},
+		{text: 'Миколаїв'},
+		{text: 'Одеса'},
+		{text: 'Полтава'},
+		{text: 'Рівне'},
+		{text: 'Суми'},
+		{text: 'Тернопіль'},
+		{text: 'Ужгород'},
+		{text: 'Харків'},
+		{text: 'Херсон'},
+		{text: 'Хмельницький'},
+		{text: 'Черкаси'},
+		{text: 'Чернівці'},
+		{text: 'Чернігів'},
+	];
+
+mixin city
+	each item, index in cityies
+		option.searching-form__option(
+			value=item.text ? item.text: '#'
+			selected=index === 0 ? 'selected' : null
+			disabled=index === 0 ? 'disabled' : null
+		)= item.text

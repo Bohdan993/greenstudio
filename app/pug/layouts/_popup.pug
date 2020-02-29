@@ -1,0 +1,34 @@
+.popup
+	.popup__layer
+		#tel-popup.zoom-anim-dialog.mfp-with-anim.mfp-hide.read-dialog.popup-window 
+			.center
+				.f-container
+					select#phone-select.phone-select(name='phone-select')
+						option(value='tel:+380676327873') 
+							|+38 (067) 632 78 73
+						option(value='tel:+380952024144')
+							|+38 (095) 202 41 44
+						option(value='tel:+380637206773')
+							|+38 (063) 720 67 73
+					.popup-links-block
+						.mfp-close.popup-link__reject
+							|Отменить
+						a.popup-link__call(href='tel:+79037788894')
+							|Вызвать
+		#thanks-popup.zoom-anim-dialog.mfp-with-anim.mfp-hide.thanks-dialog.popup-window 
+			.center
+				h2.h2-title_l
+					|Спасибо, Ваша заявка отправлена!
+		#callback-popup.zoom-anim-dialog.mfp-with-anim.mfp-hide.thanks-dialog.popup-window 
+			.center
+				h2.h2-title_l
+					|Оставьте всои конакты, и мы вам перезвоним.
+				.f-container
+					form#callback__form.callback__form(method="POST" action="javascript:void(null)")
+						input(type="hidden" name="subject" value="Форма обратного звонка")
+						.form-group
+							input(type="text" placeholder="Ваше имя" required name="name" class="text-field")
+						.form-group
+							input(type="tel" placeholder="Ваш телефон" required name="phone" class="text-field")
+						button(type='submit').main-btn.callback-btn
+							|Отправить

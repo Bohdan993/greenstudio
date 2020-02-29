@@ -1,0 +1,38 @@
+-
+	var cards = [
+		{title: 'Весільні організатори' , src: 'img/catalog/1.png', href: ''},
+		{title: 'Фотографи' , src: 'img/catalog/2.png', href: ''},
+		{title: 'Відеооператори' , src: 'img/catalog/3.png', href: ''},
+		{title: 'Флористи та букети' , src: 'img/catalog/4.png', href: ''},
+		{title: 'Декор та аксессуари' , src: 'img/catalog/5.png', href: ''},
+		{title: 'Запрошення' , src: 'img/catalog/6.png', href: ''},
+		{title: 'Кортеж' , src: 'img/catalog/7.png', href: ''},
+		{title: 'Весільні сукні' , src: 'img/catalog/8.png', href: ''},
+		{title: 'Вечірні сукні' , src: 'img/catalog/9.png', href: ''},
+		{title: 'Чоловічі костюми' , src: 'img/catalog/10.png', href: ''},
+		{title: 'Обручки' , src: 'img/catalog/11.png', href: ''},
+		{title: 'Ресторани' , src: 'img/catalog/12.png', href: ''},
+		{title: 'Кейтеринг та фуршет' , src: 'img/catalog/13.png', href: ''},
+		{title: 'Торт та коровай' , src: 'img/catalog/14.png', href: ''},
+		{title: 'Ведучі' , src: 'img/catalog/15.png', href: ''},
+		{title: 'Виїзна церемонія' , src: 'img/catalog/16.png', href: ''},
+		{title: 'Перший танець' , src: 'img/catalog/17.png', href: ''},
+		{title: 'Музиканти та DJ' , src: 'img/catalog/18.png', href: ''},
+		{title: 'Шоу програма' , src: 'img/catalog/19.png', href: ''},
+		{title: 'Феєрверк та освітлення' , src: 'img/catalog/20.png', href: ''},
+		{title: 'Краса та здоров\'я' , src: 'img/catalog/21.png', href: ''},
+		{title: 'Готелі' , src: 'img/catalog/22.png', href: ''},
+		{title: 'Туристичні агенції' , src: 'img/catalog/23.png', href: ''},
+		{title: 'Взуття та аксессуари' , src: 'img/catalog/24.png', href: ''},
+		{title: 'Нижня білизна' , src: 'img/catalog/25.png', href: ''},
+		{title: 'Весільні сукні б/к' , src: 'img/catalog/26.png', href: ''},
+		{title: 'Храми' , src: 'img/catalog/27.png', href: ''},
+
+	]
+
+mixin catalog
+	each item, index in cards
+		div.catalog-gallery__card
+			a.catalog-gallery__link(href=item.href ? item.href: '#', target="_blank")
+				img.catalog-gallery__img(src=item.src)
+				h4.catalog-gallery__title= item.title

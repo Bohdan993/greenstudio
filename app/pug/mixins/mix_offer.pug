@@ -1,0 +1,20 @@
+-
+	var offers = [
+		{text: 'Ежедневную отчетность', img: 'report'},
+		{text: 'Запись всех разговоров', img: 'phone'},
+		{text: 'Профессиональных операторов', img: 'operator'},
+		{text: 'Написание скриптов', img: 'scripts'},
+		{text: 'Точные конверсии', img: 'clock'},
+		{text: 'Максимальный результат за минимально короткий срок', img: 'graphic'},
+		{text: 'Качественные звонки', img: 'quality'},
+		{text: 'Операивную обратную связь', img: 'feedback'},
+	];
+
+
+mixin offer
+	.offer__cards
+		each item, index in offers
+			figure.offer__card
+				i.offer__card-img
+					+svg2(item.img)
+				figcaption.offer__card-text=item.text

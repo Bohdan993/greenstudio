@@ -1,0 +1,57 @@
+extends pug/base
+
+
+
+//- append vars
+	- meta.keywords = 'список, ключевых, слов'
+	- link.icon = 'favicon.ico'
+	- link.icon16x16 = 'favicon-16x16.png'
+	- link.icon32x32 = 'favicon-32x32.png'
+	- link.icon96x96 = 'favicon-96x96.png'
+	- link.icon128x128 = 'favicon-128x128.png'
+	- link.icon196x196 = 'favicon-196x196.png'
+	- meta.themeColor = '#2e7bff'
+	- meta.appleMobileWebAppCapable = 'on'
+	- meta.appleMobileWebAppStatusBarStyle = '#2e7bff'
+	- meta.appleMobileWebAppTitle = 'Dimbrowsky landing'
+	- meta.applicationName = 'Dimbrowsky landing'
+	- meta.XUACompatible = 'IE=edge'
+
+prepend vars
+	- title = 'Profitness site'
+	- description = 'Some description'
+
+
+block head-end
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-49981753-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-49981753-1');
+	// Global site tag (gtag.js) - Google Ads: 801575133
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=AW-801575133')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'AW-801575133');
+
+		
+block links
+	link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=cyrillic-ext' rel='stylesheet')
+
+
+
+
+
+
+
+
+
+block content
+	include pug/layouts/header
+	main.main
+	include pug/layouts/footer
+	include pug/layouts/_popup
+
