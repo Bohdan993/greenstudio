@@ -1,150 +1,23 @@
 header.header
 	.header__layer.section__layer
-		.center
 			.f-container
-				.heder__left
-					.header__logo
-						img(src="img/logo.png", alt="Logo")
-				.heder__right
-					.header__right_top
-						ul.header__social-list
-							li.header__social-item
-								a.header__social-link(href="#")
-									+svg2('instagram-symbol')
-							li.header__social-item
-								a.header__social-link(href="#")
-									+svg2('facebook-logo')
-							.header-mobile-phones
-								a.header-mobile-phones__link.popup-with-zoom-anim(href='#tel-popup')
-									svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24')
-										path(d='M0 0h24v24H0z' fill='none')
-										path(d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z')
-						ul.header__phone-list
-							li.header__phone-item
-								a(href="tel:+380676327873").header__phone-link
-									span
-										|+38 (067) 
-									span
-										| 632 78 73
-							li.header__phone-item
-								a(href="tel:+380952024144").header__phone-link
-									span
-										|+38 (095) 
-									span
-										| 202 41 44
-							li.header__phone-item
-								a(href="tel:+380637206773").header__phone-link
-									span
-										|+38 (063) 
-									span
-										| 720 67 73
-						a(href="#callback-popup").main-btn.header__consultation-btn.popup-with-zoom-anim
-							|Бесплатная консультация
-					.header__right_bottom
-						nav.header__menu.visible
-							.close-btn
-								span
-								span
-							ul.header__menu-list
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Главная
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Каталог товаров
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Статьи
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Наши контакты
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|О магазине
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Доставка
-								li.header__menu-item
-									a(href="#").header__menu-link
-										|Гарантия и сервис
-								li.header__menu-item.search-item
-									+svg2('magnifying-glass')
-						svg.ham.hamRotate.ham1(viewbox='0 0 100 100' width='60' fill="#fff")
-							path.line.top(fill="#fff" d='m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40')
-							path.line.middle(fill="#fff" d='m 30,50 h 40')
-							path.line.bottom(fill="#fff" d='m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40')
-				input.text-search(type="text" placeholder="Я ищу...")
-
-							
-				//- 	.header__mobile-menu
-				//- 		.close-button
-				//- 			span
-				//- 			span
-				//- 		//- +letterMenu([null, {title: 'О нас', link: '#achivments'}, {title: 'Отзывы', link: '#feedback'}, null])
-				//- 		nav.header__menu-nav
-				//- 			ul.header__menu-list
-				//- 				li.header__menu-list-item
-				//- 					a(href="#achivments").header__menu-list-link.go-to
-				//- 						|О нас
-				//- 				li.header__menu-list-item
-				//- 					a(href="#feedback").header__menu-list-link.go-to
-				//- 						|Отзывы
-				//- 	.heder__logo
-				//- 		img(src="img/Logo.svg", alt="Logo", title="Агентство Дмитрия Димбровского")
-				//- 	.header__menu
-				//- 		//- +letterMenu([{title: 'Пример работ', link: '#result'},{title: 'Гарантии', link: '#warranty'},{title: 'Результат работ', link: '#result'},{title: 'О нас', link: '#achivments'},{title: 'Отзывы', link: '#feedback'},{title: 'Меню', link: '#'}])
-				//- 		nav.header__menu-nav
-				//- 			ul.header__menu-list
-				//- 				li.header__menu-list-item.list-item_mobile
-				//- 					a(href="#result").header__menu-list-link.go-to
-				//- 						|Пример работ
-				//- 				li.header__menu-list-item
-				//- 					a(href="#warranty").header__menu-list-link.go-to
-				//- 						|Гарантии
-				//- 				li.header__menu-list-item
-				//- 					a(href="#result").header__menu-list-link.go-to
-				//- 						|Результаты работ
-				//- 				li.header__menu-list-item
-				//- 					a(href="#achivments").header__menu-list-link.go-to
-				//- 						|О нас
-				//- 				li.header__menu-list-item
-				//- 					a(href="#feedback").header__menu-list-link.go-to
-				//- 						|Отзывы
-				//- 				li.header__menu-list-item.list-item_mobile.open-button
-				//- 					a(href="#").header__menu-list-link.go-to
-				//- 						|Меню
-				//- .header__bottom
-				//- 	.header__content
-				//- 		h1.header__h1
-				//- 			|Хотите получать от 75-ти новых клиентов в 
-				//- 			|месяц?
-				//- 		p.header__description
-				//- 			|Увеличиваем продажи с помощью комплексного интернет-маркетинга с гарантией в договоре и предоставляем 
-				//- 			span
-				//- 				|первые заявки уже после 15 часов 
-				//- 			|после старта работы!
-				//- 		a(href="#header__form").header__arrow.go-to
-				//- 			+svg2('arrow_bo')
-				//- 	.header__form-layer
-				//- 		svg(viewbox="0 0 100% 100%")
-				//- 			rect(x="0" y="0" fill="none" width="100%" height="100%")
-				//- 		form#header__form.header__form
-							
-				//- 			h3.form-title
-				//- 				|Обсудим проект?
-				//- 			p.form-description
-				//- 				|Оставьте контакты, и мы рассчитаем, сколько клиентов можем привлечь в ваш бизнес
-				//- 			.form-group
-				//- 				input.text-field(type="text" class="form-control" id="InputSite" name="site" placeholder="")
-				//- 				label(for="InputSite" class="")
-				//- 					|Сайт
-				//- 			.form-group
-				//- 				input.text-field(type="text" class="form-control" id="InputPhone" name="name" placeholder="" required="")
-				//- 				label(for="InputPhone" class="")
-				//- 					|Телефон
-				//- 			button.main-btn(typr='submit')
-				//- 				|Готов обсудить
-
+				.header__top
+					.header__top-logo
+						img.header__logo-img(src="", alt="Logo")
+					nav.header__top-nav
+						ul.header__top-nav-list
+							li.header__top-nav-list-item
+								a.header__top-nav-link(href="#")
+									|Портфолио
+							li.header__top-nav-list-item
+								a.header__top-nav-link(href="#")
+									|Отзывы
+							li.header__top-nav-list-item
+								a.header__top-nav-link(href="#")
+									|О нас
+							li.header__top-nav-list-item
+								a.header__top-nav-link(href="#")
+									|Контакты
 
 
 

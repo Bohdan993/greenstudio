@@ -1,0 +1,56 @@
+.preview {
+	// background: cyan;
+	.circle-bg {
+			background: #962a96;
+	}
+}
+
+.preview__layer {
+	height: 100%;
+
+	.f-container {
+		height: 100%;
+	}
+}
+
+.preview-content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
+
+	& > * {
+		flex-basis: 100%;
+	}
+}
+
+.preview__description {
+	text-align: center;
+	color: @font-color;
+}
+
+.preview__arrow {
+	width: 30px;
+	height: 30px;
+	flex-basis: unset;
+	animation: move infinite 1s linear alternate;
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: @main-color;
+	}
+}
+
+
+@keyframes move {
+	0% {
+		transform: translateY(0%);
+	}
+
+	100% {
+		transform: translateY(50%);
+	}
+}

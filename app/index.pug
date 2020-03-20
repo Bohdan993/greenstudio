@@ -18,7 +18,7 @@ extends pug/base
 	- meta.XUACompatible = 'IE=edge'
 
 prepend vars
-	- title = 'Profitness site'
+	- title = 'Greensstudio topsite'
 	- description = 'Some description'
 
 
@@ -39,7 +39,8 @@ block head-end
 
 		
 block links
-	link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=cyrillic-ext' rel='stylesheet')
+	link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' rel='stylesheet')
+
 
 
 
@@ -51,7 +52,10 @@ block links
 
 block content
 	include pug/layouts/header
-	main.main
-	include pug/layouts/footer
-	include pug/layouts/_popup
+	main
+		.scrollmagic
+			include pug/layouts/preview
+			include pug/layouts/portfolio
+	//- include pug/layouts/footer
+	//- include pug/layouts/_popup
 

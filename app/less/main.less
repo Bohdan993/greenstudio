@@ -9,6 +9,7 @@ html {
 html,
 body {
   overflow-x: hidden;
+  color: @white;
 }
 
 ::selection {
@@ -18,9 +19,9 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: @font-color;
   letter-spacing: 1.15px;
   letter-spacing: 0.03rem;
@@ -99,6 +100,26 @@ input {
 
 //|||||||||||||||||||COMMON ELEMENTS|||||||||||||||||||//
 
+.circle-section {
+  height: 100vh;
+  // transition: opacity 1s linear;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+.circle-bg {
+
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 141.42vw;
+    height: 141.42vw;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: 50%;
+    z-index: -1;
+
+}
 .main-btn {
   background: radial-gradient(circle, #fc6719, #fc6314, #fc5e0f, #fc5908, #fc5402);
   width: 100%;
@@ -125,6 +146,16 @@ input {
     background: radial-gradient(circle, #fc6719 + 15, #fc6314 + 15, #fc5e0f + 15, #fc5908 + 15, #fc5402 + 15);
     box-shadow: 0px 0px 15px @main-color;
   }
+}
+
+.h1-title {
+ .fSize(72vw, 72px * (576/1230), 72px, 576px, 1230px);
+  color: @main-color;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
 }
 .h2-title_l {
   .fSize(24vw, 24px * (768/980), 24px, 768px, 980px);
@@ -324,6 +355,8 @@ input {
 //////////////////////////
 
 @import url("app/less/_header.less");
+@import url("app/less/_preview.less");
+@import url("app/less/_portfolio.less");
 @import url("app/less/_footer.less");
 
 
