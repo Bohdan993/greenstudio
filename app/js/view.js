@@ -1,5 +1,11 @@
-let preview = document.querySelector('.preview__layer');
-let prevBg = preview.parentNode.querySelector('.circle-bg');
+let preview = document.querySelectorAll('.circle__layer');
+
+preview = [...preview];
+
+let prevBg = [].map.call(preview, function(el, ind) {
+  return el.parentNode.querySelector('.circle-bg');
+})
+
 let scrollmagic = document.querySelector('.scrollmagic');
 let circleSections = document.querySelectorAll('.circle-section');
 
