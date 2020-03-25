@@ -4,8 +4,26 @@
 	position: fixed;
 	width: 100%;
 	z-index: 99;
+	font-weight: 700;
+	font-family: 'Nunito', sans-serif;
+	&.active {
+		.header__layer {
+			background: @white;
+			border-color: @white;
+		}
+		.header__top-nav-link {
+			color: @font-color;
+		}
+	}
 }
 
+
+.header__layer {
+	background: @main-color;
+	border-color: @main-color;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.12), 0px 4px 5px 0px rgba(0, 0, 0, 0.08), 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+	transition: background 0.25s linear;
+}
 
 .header__top {
 	display: flex;
@@ -22,6 +40,10 @@
 
 .header__top-nav-list-item {
 	margin: 0 10px;
+}
+
+.header__top-nav-link {
+	color: @white;
 }
 
 

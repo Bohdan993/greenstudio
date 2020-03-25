@@ -11,8 +11,10 @@
     "magnific-popup": "^1.1.0",
     "magnify": "^2.3.3",
     "materialize-css": "^1.0.0-rc.2",
+    "node-waves": "^0.7.6",
     "normalize.css": "^8.0.1",
     "nouislider": "^14.1.0",
+    "swiper": "^5.3.6",
     "wnumb": "^1.2.0"
   },
   "devDependencies": {

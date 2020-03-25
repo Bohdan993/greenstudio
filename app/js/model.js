@@ -48,23 +48,43 @@
 	}
 
 
-
 	scroll() {
 			let count = 0;
+			let flag = false;
 			let arr = [];
 			let circleFunc = () => {
+					// console.log(arr);
+
+					
+				if(window.pageYOffset/this.checkSize()[count] >= 0.5 && !flag) {
+							document.querySelector('.header').classList.add('active');
+							flag = true;
+						} else if (window.pageYOffset/this.checkSize()[count] <= 0.5 && flag){
+								document.querySelector('.header').classList.remove('active');
+								flag = false;
+						}
 
 
-				this.el[count].style.opacity = `${(count+1) - ((window.pageYOffset)/this.checkSize()[count] * 1.2)}`;
+				this.el[count].style.opacity = `${(count+1) - ((window.pageYOffset)/this.checkSize()[count] * 1.1)}`;
+
 				this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
 				if(window.pageYOffset >= this.summHeigth()[count]) {
 						arr[count] = count;
 						this.el[count].style.opacity = '0';
 						this.bg[count].style.transform = 'translate(-50%, -50%) scale(0)';
-						if(count < this.el.length - 1) count++;
+
+						if(count < this.el.length - 1) {
+							this.el[count].parentNode.style.pointerEvents = `none`;
+
 						
-					} else if(window.pageYOffset < this.summHeigth()[count] && count > 0){
-						count = arr[count - 1];
+							count++;
+							
+							// this.bg[count].style.transform = 'translate(-50%, -50%) scale(1)';
+						}
+						
+					} else if(window.pageYOffset < this.summHeigth()[count] - this.summHeigth()[count - 1] && count > 0){
+						count--;
+						this.el[count].parentNode.style.pointerEvents = `all`;
 					}
 				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight === window.pageYOffset){
 					this.el.forEach((el, index)=>{
@@ -89,7 +109,16 @@
 	}
 
 
+
+	let portfolio = () => {
+		document.querySelector('.portfolio-card').addEventListener('click', function(){
+			alert(1);
+		})
+	}
+
+
 	export {
 		ScrollElem,
-		setZindex
+		setZindex,
+		portfolio
 	}
