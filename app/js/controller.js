@@ -1,5 +1,5 @@
 import {ScrollElem, setZindex, portfolio} from './model';
-import {preview, prevBg, scrollmagic, circleSections} from './view';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -13,7 +13,7 @@ let app = {
 		this.waves();
 	},
 	scroll(){
-		let el = new ScrollElem(preview, prevBg);
+		let el = new ScrollElem(preview, prevBg, circleHidden);
 		el.scroll();
 	},
 	scrollmagic(){
@@ -37,6 +37,11 @@ let app = {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      type: 'fraction',
+      renderFraction: function(currentClass, totalClass) {
+      	 return '<span class="swiper-count ' + currentClass + '"></span>' + '<span class="swiper-count ' + totalClass + '"></span>';
+      }
+
     },
 
     // mousewheel: {
@@ -45,8 +50,8 @@ let app = {
     slidesPerView: 1,
       fadeEffect: {
     crossFade: true
-  },
-  effect: 'fade',
+  	},
+  	effect: 'fade',
 
     // Navigation arrows
     navigation: {
@@ -59,6 +64,10 @@ let app = {
     //   el: '.swiper-scrollbar',
     // },
   })
+		// mySwiper.on('slideChange', function () {
+  // 		console.log(this.realIndex);
+  // 		console.log(this.slides[1]);
+		// });
 	},
 
 	waves(){

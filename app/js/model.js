@@ -1,7 +1,8 @@
  class ScrollElem {
-	constructor(el, bg) {
+	constructor(el, bg, hidden) {
 		this.el = el;
 		this.bg = bg;
+		this.hidden = hidden;
 	}
 
 	static wrapperHeight(el){
@@ -53,7 +54,7 @@
 			let flag = false;
 			let arr = [];
 			let circleFunc = () => {
-					// console.log(arr);
+					// console.log(this.hidden);
 
 					
 				if(window.pageYOffset/this.checkSize()[count] >= 0.5 && !flag) {
@@ -66,19 +67,26 @@
 
 
 				this.el[count].style.opacity = `${(count+1) - ((window.pageYOffset)/this.checkSize()[count] * 1.1)}`;
-
 				this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
+				if(this.hidden[count + 1] !== undefined) {
+					this.hidden[count + 1].style.pointerEvents = 'all';
+					this.hidden[count + 1].style.opacity = '1';
+					this.hidden[count + 1].style.background = 'rgba(0,0,0,0.8)';
+				}
+				
+
 				if(window.pageYOffset >= this.summHeigth()[count]) {
 						arr[count] = count;
 						this.el[count].style.opacity = '0';
 						this.bg[count].style.transform = 'translate(-50%, -50%) scale(0)';
+						if(this.hidden[count + 1] !== undefined) {
+						this.hidden[count + 1].style.opacity = '0';
+						this.hidden[count + 1].style.pointerEvents = 'none';
+					}
 
 						if(count < this.el.length - 1) {
 							this.el[count].parentNode.style.pointerEvents = `none`;
-
-						
 							count++;
-							
 							// this.bg[count].style.transform = 'translate(-50%, -50%) scale(1)';
 						}
 						
@@ -86,6 +94,7 @@
 						count--;
 						this.el[count].parentNode.style.pointerEvents = `all`;
 					}
+
 				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight === window.pageYOffset){
 					this.el.forEach((el, index)=>{
 						el.style.opacity = '0';
@@ -112,7 +121,7 @@
 
 	let portfolio = () => {
 		document.querySelector('.portfolio-card').addEventListener('click', function(){
-			alert(1);
+
 		})
 	}
 

@@ -8,10 +8,19 @@ let prevBg = [].map.call(preview, function(el, ind) {
 
 let scrollmagic = document.querySelector('.scrollmagic');
 let circleSections = document.querySelectorAll('.circle-section');
+let circleHidden = [].map.call(preview, function(el, ind) {
+  return el.querySelector('.cirle-hidden');
+})
+
+// let swiperNumCurrent = document.querySelector('.swiper-num-current');
+// let swiperNumAll = document.querySelector('.swiper-num-all');
+
+
 
 export {
 	preview,
 	prevBg,
 	scrollmagic,
-	circleSections
+	circleSections,
+	circleHidden,
 }
