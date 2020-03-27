@@ -11,6 +11,11 @@ let circleSections = document.querySelectorAll('.circle-section');
 let circleHidden = [].map.call(preview, function(el, ind) {
   return el.querySelector('.cirle-hidden');
 })
+let portfolioCards = document.querySelectorAll('.portfolio-card');
+portfolioCards = [...portfolioCards];
+let header = document.querySelector('.header');
+
+let canvas = document.querySelector('canvas');
 
 // let swiperNumCurrent = document.querySelector('.swiper-num-current');
 // let swiperNumAll = document.querySelector('.swiper-num-all');
@@ -23,4 +28,7 @@ export {
 	scrollmagic,
 	circleSections,
 	circleHidden,
+	canvas,
+	header,
+	portfolioCards
 }

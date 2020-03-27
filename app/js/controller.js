@@ -1,5 +1,5 @@
-import {ScrollElem, setZindex, portfolio} from './model';
-import {preview, prevBg, scrollmagic, circleSections, circleHidden} from './view';
+import {ScrollElem, setZindex, portfolio, drawCanvas} from './model';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden, canvas, header, portfolioCards} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -11,9 +11,10 @@ let app = {
 		this.portfolio();
 		this.swiper();
 		this.waves();
+		this.canvas();
 	},
 	scroll(){
-		let el = new ScrollElem(preview, prevBg, circleHidden);
+		let el = new ScrollElem(preview, prevBg, circleHidden, header);
 		el.scroll();
 	},
 	scrollmagic(){
@@ -25,7 +26,7 @@ let app = {
 	},
 
 	portfolio(){
-		portfolio();
+		portfolio(portfolioCards);
 	},
 
 	swiper(){
@@ -73,6 +74,10 @@ let app = {
 	waves(){
 		waves.init();
     waves.attach('.wave', ['waves-button', 'waves-float']);
+	},
+
+	canvas(){
+		drawCanvas(canvas);
 	}
 }
 
