@@ -15,7 +15,7 @@ let portfolioCards = document.querySelectorAll('.portfolio-card');
 portfolioCards = [...portfolioCards];
 let header = document.querySelector('.header');
 
-let canvas = document.querySelector('canvas');
+// let canvas = document.querySelector('canvas');
 
 // let swiperNumCurrent = document.querySelector('.swiper-num-current');
 // let swiperNumAll = document.querySelector('.swiper-num-all');
@@ -28,7 +28,7 @@ export {
 	scrollmagic,
 	circleSections,
 	circleHidden,
-	canvas,
+	// canvas,
 	header,
 	portfolioCards
 }

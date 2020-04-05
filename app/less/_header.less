@@ -8,11 +8,25 @@
 	font-family: 'Nunito', sans-serif;
 	&.active {
 		.header__layer {
-			background: @white;
-			border-color: @white;
+			background: @accent;
+			border-color: @accent;
+
 		}
 		.header__top-nav-link {
-			color: @font-color;
+			color: @white;
+		}
+
+		.main-btn {
+			background: @white;
+			color: @accent;
+			&:hover {
+      	color: @white;
+    	}
+			& .btn-overlay {
+				&:after {
+					background-color: @teal;
+				}
+			}
 		}
 	}
 }
@@ -34,8 +48,24 @@
 }
 
 .header__top-logo {
-	max-width: 125px;
+	flex: 0 1 33%;
 	padding: 0 15px;
+	display: flex;
+	justify-content: center;
+	img {
+		max-width: 125px;
+	}
+}
+
+.header__top-btn {
+	flex: 0 1 33%;
+	padding: 0 15px;
+}
+
+.header__top-nav {
+	flex: 0 1 33%;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .header__logo-ico {
@@ -62,6 +92,7 @@
 .header__top-nav-link {
 	color: @white;
 }
+
 
 
 

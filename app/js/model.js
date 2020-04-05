@@ -59,7 +59,13 @@
 				
 				count%2 == 0 ? this.header.classList.remove('active'): this.header.classList.add('active');
 
-				this.el[count].style.opacity = `${(count+1) - ((window.pageYOffset)/this.checkSize()[count] * 1.1)}`;
+
+				let diff = (window.pageYOffset/ (this.summHeigth()[count]/ (count + 1)) - count) < 0.3;
+			
+      // console.log((count+1) - (window.pageYOffset/this.checkSize()[count] * 1.3));
+      console.log(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count] / 1.3);
+
+				diff ? this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) + 0.1}` : this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) - 0.4}`;
 				this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
 				if(this.hidden[count + 1] !== undefined) {
 					this.hidden[count + 1].style.pointerEvents = 'all';
