@@ -13,7 +13,7 @@ body {
 }
 
 ::selection {
-  background: @main-color;
+  background: rgba(@teal);
   color: @white;
 }
 body {
@@ -131,6 +131,8 @@ canvas {
       // background: rgba(0,0,0,0.7);
     }
 }
+
+
 .circle-bg {
 
     border-radius: 50%;
@@ -168,6 +170,10 @@ canvas {
   // max-height: 50px;
   letter-spacing: 0.1px;
   position: relative;
+  &.teal {
+    background: @teal;
+
+  }
   & .btn-overlay {
     position: absolute;
     width: 120%;
@@ -435,7 +441,7 @@ canvas {
 // 	position: absolute;
 // 	z-index: -1;
 // }
-
+.gradient-green          { background-image:linear-gradient(to right, @main-color, @teal); color:rgba(0, 0, 0, 0); background-clip:text; position:relative; }
 .overflow {
   overflow: hidden;
 }

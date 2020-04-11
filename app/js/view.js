@@ -20,6 +20,21 @@ let header = document.querySelector('.header');
 // let swiperNumCurrent = document.querySelector('.swiper-num-current');
 // let swiperNumAll = document.querySelector('.swiper-num-all');
 
+let tapOpen = document.querySelectorAll('.tap-popup-open');
+tapOpen = [...tapOpen];
+
+let tapClose = document.querySelectorAll('.tap-popup-close');
+tapClose = [...tapClose];
+
+
+let textFields = document.querySelectorAll('.text-field');
+
+textFields = [...textFields];
+
+let tabs = document.querySelectorAll('.feedback__tabs-controls-list-item');
+
+tabs = [...tabs];
+
 
 
 export {
@@ -30,5 +45,9 @@ export {
 	circleHidden,
 	// canvas,
 	header,
-	portfolioCards
+	portfolioCards,
+	tapOpen,
+	tapClose,
+	textFields,
+	tabs
 }

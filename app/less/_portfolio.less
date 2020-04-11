@@ -6,7 +6,7 @@
 			// // background-size: contain;
 			// background-position: center;
 			// background: linear-gradient(135deg, @main-color, @teal);
-			background: linear-gradient(to right, @teal 46%, @main-color 74%)
+			background: @white;
 	}
 
 	.center {
@@ -23,21 +23,94 @@
 
 .portfolio-title {
 	text-align: center;
-	color: @white;
+	// color: @font-color;
 	width: 100%;
 }
 
 .portfolio-subtitle {
-	color: @white;
+	color: @font-color;
 	font-family: 'Nunito', sans-serif;
 }
 
 .portfolio__layer {
+	background: url(../img/background-portfolio.svg) no-repeat center;
+	background-position: center -180px;
+	background-size: 100%;
+	position: relative;
 	height: 100%;
 	// background: url(../img/Abstract-Geometric-Background-Green.jpg) no-repeat 150%/contain;
 	.f-container {
 		height: 100%;
 	}
+}
+
+.portfolio-circle1 {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	background: linear-gradient(135deg, @teal, @main-color);
+	border-radius: 50%;
+
+}
+
+.portfolio-circle2 {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: linear-gradient(135deg, @teal, @main-color);
+	border-radius: 50%;
+	top: 75%;
+	left: 64%;
+}
+
+
+.portfolio-circle3 {
+	width: 290px;
+	height: 290px;
+	position: absolute;
+	top: 18%;
+	left: 67%;
+
+		svg {
+		fill: @accent;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.portfolio-circle4 {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	background: linear-gradient(135deg, @teal, @main-color);
+	border-radius: 50%;
+	top: 20%;
+	left: 92%;
+}
+
+.portfolio-circle5 {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	top: 88%;
+	left: 16%;
+
+		svg {
+		fill: @accent;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.portfolio-circle6 {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: linear-gradient(135deg, @teal, @main-color);
+	border-radius: 50%;
+	top: 75%;
+	left: 64%;
 }
 
 .portfolio-content {
@@ -51,26 +124,78 @@
 .portfolio-card {
 	flex: 0 1 100%;
 	height: 320px;
-	overflow-y: hidden;
+	overflow: hidden;
 	border-radius: 6px;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(@black, 0.6);
+		transition: opacity .25s linear;
+		z-index: 1;
+	}
 	&:not(:last-child) {
 		margin-bottom: 	15px;
 	}
 	
-	box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.4), 0px 12px 17px 2px rgba(0, 0, 0, 0.24), 0px 5px 22px 4px rgba(0, 0, 0, 0.22);
 	img {
 		width: 100%;
 		transition: transform 2s linear;
 	}
 
 	&:hover {
+		.portfolio-card-hover {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+
+		&:before {
+			opacity: 0;
+		}
+		
 		img {
 			transition: transform 10s linear;
+			transition-delay: 0.25s;
 			transform: translateY(calc(-100% - 320px));
+			// opacity: 0;
 		}
 	}
 }
 
+.portfolio-card-hover {
+	font-family: "Nunito", sans-serif;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	// background: rgba(@black, 0.6);
+	transition: all 0.25s linear;
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	align-items:center;
+	z-index: 3;
+
+	// &:hover {
+	// 	.portfolio-card__title{
+	// 		transform: translateX(-100%);
+	// 		opacity: 0;
+	// 	}
+	// }
+}
+
+.portfolio-card__title {
+	.fSize(28vw, 28px * (576/1230), 28px, 576px, 1230px);
+	color: @white;
+	transition: all 0.25s linear;
+
+}
 
 
 
@@ -162,3 +287,5 @@
 // 	color:#fff;
 // 	background: #007aff;
 // }
+
+

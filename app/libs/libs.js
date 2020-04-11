@@ -5,15 +5,18 @@
 // import magnificPopup from 'magnific-popup';
 import swiper from 'swiper';
 import waves from 'node-waves';
+// import M from 'materialize-css';
 
 
 
 
 // window.$ = $;
 // window.jQuery = $;
+// tapTarget = $.tapTarget;
 
 
 export {
 	swiper,
-	waves
+	waves,
+	// M
 }

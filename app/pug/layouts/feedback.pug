@@ -3,8 +3,30 @@
 	.feedback__layer.section__layer.circle__layer
 		.cirle-hidden
 		.center
-			h2.h2-title.feedback-title
+			h2.h2-title.feedback-title.gradient-green
 					|Отзывы о нас
 			p.subtitle.feedback-subtitle
 				|Чтобы убедиться в нашем проффесионализме, посмотрите, что говорят о нас клиенты
 			.f-container
+				.feedback__tabs-controls
+					ul.feedback__tabs-controls-list(data-active="video")
+						li.feedback__tabs-controls-list-item.active(data-tab="video")
+							|Видео
+						li.feedback__tabs-controls-list-item(data-tab="screenshot")
+							|Скриншоты
+						li.feedback__tabs-controls-list-item(data-tab="audio")
+							|Аудио
+						li.feedback__tabs-controls-list-item(data-tab="text")
+							|Текст
+				.feedback__tabs
+					.feedback__tab(data-card="video")
+						img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+					.feedback__tab(data-card="video")
+						img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+					.feedback__tab(data-card="screenshot")
+					.feedback__tab(data-card="audio")
+					.feedback__tab(data-card="video")
+					.feedback__tab(data-card="audio")
+					.feedback__tab(data-card="screenshot")
+					.feedback__tab(data-card="text")
+					.feedback__tab(data-card="text")

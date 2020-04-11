@@ -63,7 +63,7 @@
 				let diff = (window.pageYOffset/ (this.summHeigth()[count]/ (count + 1)) - count) < 0.3;
 			
       // console.log((count+1) - (window.pageYOffset/this.checkSize()[count] * 1.3));
-      console.log(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count] / 1.3);
+      // console.log(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count] / 1.3);
 
 				diff ? this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) + 0.1}` : this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) - 0.4}`;
 				this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
@@ -84,12 +84,28 @@
 
 						if(count < this.el.length - 1) {
 							this.el[count].parentNode.style.pointerEvents = `none`;
+              this.el[count].parentNode.querySelectorAll('.swiper-container-fade').forEach((item, index)=>{
+                item.style.pointerEvents = `none`;
+              })
+
+              this.el[count].parentNode.querySelectorAll('.swiper-slide-active').forEach((item, index)=>{
+                item.style.pointerEvents = `none`;
+              })
 							count++;
 						}
 
 					} else if(window.pageYOffset < this.summHeigth()[count] - this.summHeigth()[0] && count > 0){
 						count--;
 						this.el[count].parentNode.style.pointerEvents = `all`;
+            this.el[count].parentNode.querySelectorAll('.swiper-container-fade').forEach((item, index)=>{
+                item.style.pointerEvents = `auto`;
+              })
+
+            this.el[count].parentNode.querySelectorAll('.swiper-slide-active').forEach((item, index)=>{
+                item.style.pointerEvents = `auto`;
+              })
+
+            // console.log(this.el[count].parentNode);
 					}
 
 				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight === window.pageYOffset){
@@ -99,14 +115,64 @@
 					this.bg.forEach((el, index)=>{
 						el.style.transform = 'translate(-50%, -50%) scale(0)';
 					})
-				}
+
+          this.el.forEach((el, index)=>{
+            el.parentNode.style.pointerEvents = 'none';
+
+          })
+				} else {
+          this.el[this.el.length - 1].parentNode.style.pointerEvents = 'all';
+
+        }
 			}
 			setTimeout(()=>{window.addEventListener('load', circleFunc)}, 0);
 			window.addEventListener('scroll', circleFunc);
 			window.addEventListener('resize', circleFunc)
 
 		}
-	}	
+	}
+
+
+
+class TapPopup {
+  constructor(openBtns, closeBtns){
+    this.openBtns = openBtns;
+    this.closeBtns = closeBtns;
+  }
+
+
+  init(){
+    this.open();
+    this.close();
+  }
+
+  open(){
+
+    this.openBtns.forEach((el, ind)=>{
+      let attr = el.getAttribute("data-open");
+        el.addEventListener('click', ()=>{
+          let elem = document.querySelector(attr);
+          elem.classList.add('open');
+          elem.querySelector('.tap-close-ico').textContent = 'close';
+        })
+    })
+  }
+
+  close() {
+     this.closeBtns.forEach((el, ind)=>{
+      let attr = el.getAttribute("data-close");
+        el.addEventListener('click', ()=>{
+          document.querySelector(attr).classList.remove('open');
+          let elem = document.querySelector(attr);
+          elem.classList.remove('open');
+          elem.querySelector('.tap-close-ico').textContent = 'phone';
+        })
+    })
+  }
+}
+
+
+
 
 
 
@@ -138,6 +204,47 @@
 		// 	})
 		// })
 	}
+
+
+  let focusField = (fields)=>{
+    fields.forEach((el, ind)=>{
+      el.addEventListener('focus', function(){
+        el.parentNode.querySelector('label').classList.remove('active-label_g');
+        el.parentNode.querySelector('label').classList.add('active-label');
+        el.parentNode.parentNode.querySelector('.tap-popup__form-ico').style.color = '#1de9c3';
+      })
+    })
+  }
+
+
+  let blurField = (fields)=>{
+    fields.forEach((el, ind)=>{
+      el.addEventListener('blur', function(){
+        el.parentNode.querySelector('label').classList.remove('active-label');
+        el.parentNode.parentNode.querySelector('.tap-popup__form-ico').style.color = '#6332f6';
+        console.log(el.value);
+        if(el.value !== ""){
+          el.parentNode.querySelector('label').classList.add('active-label_g');
+        } else {
+          el.parentNode.querySelector('label').classList.remove('active-label_g');
+        }
+      })
+    })
+  }
+
+
+  let tabsSwitch = (tabs)=>{
+    tabs.forEach((el, ind)=>{
+      el.addEventListener('click', function(){
+        tabs.forEach((elem)=>{
+          elem.classList.remove('active');
+        })
+        el.classList.add('active');
+        let attr = el.getAttribute('data-tab');
+        el.parentNode.setAttribute('data-active', attr);
+      })
+    })
+  }
 
 
 
@@ -336,5 +443,9 @@
 		ScrollElem,
 		setZindex,
 		portfolio,
-		drawCanvas
+		drawCanvas,
+    TapPopup,
+    focusField,
+    blurField,
+    tabsSwitch
 	}

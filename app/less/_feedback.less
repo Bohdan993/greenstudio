@@ -5,7 +5,7 @@
 			// background-repeat: no-repeat;
 			// // background-size: contain;
 			// background-position: center;
-			background: yellow;
+			background: @white;
 	}
 
 	.center {
@@ -22,7 +22,7 @@
 
 .feedback-title {
 	text-align: center;
-	color: @font-color;
+	// color: @font-color;
 	width: 100%;
 }
 
@@ -36,5 +36,130 @@
 	// background: url(../img/Abstract-Geometric-Background-Green.jpg) no-repeat 150%/contain;
 	.f-container {
 		height: 100%;
+	}
+}
+
+.feedback__tabs-controls {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.feedback__tabs-controls-list {
+	font-family: 'Nunito', sans-serif;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	// box-shadow: inset 0px -1px 5px 0px @font-color;
+  box-shadow: inset 4px 3px 8px rgba(@font-color, 0.3), inset -4px -4px 8px white;
+  position: relative;
+
+  &> * {
+  	position: relative;
+  	z-index: 2;
+  }
+  &:before {
+  	content: '';
+  	width: 45px;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+  	background: @accent;
+  	position: absolute;
+  	border-radius: 25px;
+  	z-index: 0;
+  	transition: all 0.45s ease-in-out;
+  }
+
+  &:after {
+  	content: '';
+  	width: 45px;
+  	height: 100%;
+  	left: 0;
+  	top: 0;
+  	background: @accent;
+  	position: absolute;
+  	border-radius: 25px;
+  	z-index: 0;
+  	transition: all 0.52s ease-in-out;
+  }
+
+
+  &[data-active="video"] {
+  	&:before {
+			width: 60px;
+  	}
+
+  	&:after {
+  		width: 60px;
+  	}
+  }
+
+
+  &[data-active="screenshot"] {
+  	&:before {
+			width: 116px;
+			left: 60px;
+  	}
+
+  	&:after {
+  			width: 116px;
+				left: 60px;
+  	}
+  }
+
+   &[data-active="audio"] {
+  	&:before {
+			width: 60px;
+			left: 60px + 117px;
+  	}
+
+  	&:after {
+			width: 60px;
+			left: 60px + 117px;
+  	}
+  }
+
+   &[data-active="text"] {
+  	&:before {
+			width: 54px;
+			left: 60px + 130px + 55px;
+  	}
+
+  	&:after {
+			width: 54px;
+			left: 60px + 130px + 55px;
+  	}
+  }
+
+}
+
+.feedback__tabs-controls-list-item {
+		padding: 5px;
+		cursor: pointer;
+		border-radius: 25px;
+		transition: all 0.45s linear;
+		&.waves-float {
+			box-shadow: none;
+		}
+
+		&.waves-button {
+			font-size: unset;
+			line-height: unset;
+		}
+
+		&:hover {
+			background: transparent;
+		}
+
+		&:active {
+			background: transparent;
+		}
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+	&.active {
+			color: @white;
 	}
 }

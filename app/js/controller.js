@@ -1,5 +1,5 @@
-import {ScrollElem, setZindex, portfolio} from './model';
-import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards} from './view';
+import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch} from './model';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -11,6 +11,9 @@ let app = {
 		this.portfolio();
 		this.swiper();
 		this.waves();
+		this.tapTarget();
+		this.textFields();
+		this.tabs();
 	},
 	scroll(){
 		let el = new ScrollElem(preview, prevBg, circleHidden, header);
@@ -64,16 +67,38 @@ let app = {
     //   el: '.swiper-scrollbar',
     // },
   })
-		// mySwiper.on('slideChange', function () {
-  // 		console.log(this.realIndex);
-  // 		console.log(this.slides[1]);
-		// });
+		mySwiper.on('slideChange', function () {
+
+			[].forEach.call(this.slides, function(el, ind, arr){
+				// this.slides[this.realIndex]
+  			el.style.pointerEvents = `none`;
+  		})
+
+
+  		this.slides[this.activeIndex].style.pointerEvents = 'all';
+
+  		
+		});
 	},
 
 	waves(){
 		waves.init();
     waves.attach('.wave', ['waves-button', 'waves-float']);
 	},
+
+	tapTarget(){
+		let myTapPopup = new TapPopup(tapOpen, tapClose);
+		myTapPopup.init();
+	},
+
+	textFields(){
+		focusField(textFields);
+		blurField(textFields);
+	},
+
+	tabs(){
+		tabsSwitch(tabs);
+	}
 
 }
 
