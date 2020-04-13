@@ -96,6 +96,8 @@ let app = {
 	waves(){
 		waves.init();
     waves.attach('.wave', ['waves-button', 'waves-float']);
+
+   // console.log(document.querySelector('.leave-contact__img').getBoundingClientRect().top + document.body.scrollTop);
 	},
 
 	tapTarget(){
