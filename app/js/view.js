@@ -36,6 +36,9 @@ let tabs = document.querySelectorAll('.feedback__tabs-controls-list-item');
 tabs = [...tabs];
 
 
+let lastElem = document.querySelector('.last-elem');
+
+
 
 export {
 	preview,
@@ -49,5 +52,6 @@ export {
 	tapOpen,
 	tapClose,
 	textFields,
-	tabs
+	tabs,
+	lastElem
 }

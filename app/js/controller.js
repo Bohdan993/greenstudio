@@ -1,5 +1,5 @@
-import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch} from './model';
-import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs} from './view';
+import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch, feedbackSwiper} from './model';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs, lastElem} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -20,7 +20,7 @@ let app = {
 		el.scroll();
 	},
 	scrollmagic(){
-		ScrollElem.wrapperHeight(scrollmagic);
+		ScrollElem.wrapperHeight(scrollmagic, lastElem);
 	},
 
 	setzindex() {
@@ -79,6 +79,18 @@ let app = {
 
   		
 		});
+
+
+		// let feedbackSwiper = new swiper('.feedback__tabs', {
+		// 	direction: 'vertical',
+		// 	loop: true,
+		// 	slidesPerView: 2,
+		// 	spaceBetween: 30,
+  //     fadeEffect: {
+	 //    crossFade: true
+	 //  	},
+	 //  	effect: 'fade',
+		// });
 	},
 
 	waves(){
@@ -108,3 +120,6 @@ let app = {
 export {
 	app
 }
+
+
+

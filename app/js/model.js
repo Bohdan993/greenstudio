@@ -1,3 +1,6 @@
+ import {swiper} from '../libs/libs';
+
+
  class ScrollElem {
 	constructor(el, bg, hidden, header) {
 		this.el = el;
@@ -6,9 +9,10 @@
 		this.header = header;
 	}
 
-	static wrapperHeight(el){
+	static wrapperHeight(el, lastElem){
  	let addSizes = () => {
-
+      let offset = 0;
+      let flag = false;
 			el.style.top = 'auto';
 			el.style.left = 'auto';
 			el.style.bottom = 'auto';
@@ -25,8 +29,25 @@
 			})
 
 			el.style.paddingBottom = pbSum + 'px';
-		}
+      window.addEventListener('scroll', function(){
+        offset = this.pageYOffset;
+        if(this.pageYOffset > pbSum && !flag) {
+          // flag = true;
+            lastElem.style.position = 'relative';
+            el.style.paddingTop = pbSum + 'px';
+            el.style.paddingBottom = 0 + 'px';
+            // console.log(flag);
+        } else {
+            // flag = false;
+            lastElem.style.position = 'fixed';
+            el.style.paddingBottom = pbSum + 'px';
+            el.style.paddingTop = 0 + 'px';
+        }
+      })
+
+      console.log(offset);
 		
+    }
 		window.addEventListener('resize', addSizes);
 		window.addEventListener('load', addSizes);
 	}
@@ -108,8 +129,10 @@
             // console.log(this.el[count].parentNode);
 					}
 
-				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight === window.pageYOffset){
-					this.el.forEach((el, index)=>{
+				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight <= window.pageYOffset && !flag){
+          this.header.classList.add('active');
+          // console.log('yes');
+					 this.el.forEach((el, index)=>{
 						el.style.opacity = '0';
 					})
 					this.bg.forEach((el, index)=>{
@@ -120,9 +143,13 @@
             el.parentNode.style.pointerEvents = 'none';
 
           })
-				} else {
-          this.el[this.el.length - 1].parentNode.style.pointerEvents = 'all';
 
+          flag = true;
+				} else if (this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight >= window.pageYOffset && flag){
+          this.el[this.el.length - 1].parentNode.style.pointerEvents = 'all';
+          this.header.classList.remove('active');
+          // console.log('no');
+          flag = false;
         }
 			}
 			setTimeout(()=>{window.addEventListener('load', circleFunc)}, 0);
@@ -232,6 +259,19 @@ class TapPopup {
     })
   }
 
+  let feedbackSwiper = new swiper('.feedback__tabs', {
+        direction: 'vertical',
+         observer: true,
+        // loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        grabCursor: true,
+        fadeEffect: {
+        crossFade: true
+        },
+        effect: 'fade',
+  });
+
 
   let tabsSwitch = (tabs)=>{
     tabs.forEach((el, ind)=>{
@@ -242,9 +282,92 @@ class TapPopup {
         el.classList.add('active');
         let attr = el.getAttribute('data-tab');
         el.parentNode.setAttribute('data-active', attr);
+
+
+        let slides = document.querySelectorAll('.feedback-slide');
+        slides = [...slides];
+    
+        slides.forEach((el, ind)=> {
+          let filter = el.getAttribute('data-card');
+          if(filter !== attr) {
+            el.style.display = 'none';
+          } else {
+            el.style.display = 'flex';
+          }
+        })
+
+
+          feedbackSwiper.update();
+          feedbackSwiper.slideToLoop(0);
+          // feedbackSwiper.scrollbar.updateSize();
       })
     })
   }
+
+
+//   $(document).ready(function(){
+  
+//   $('.swiper-filter').on( 'click', 'a', function() {
+//     var filter = $(this).attr('data-filter');
+    
+//     $('.swiper-product .swiper-slide').css('display', 'none')
+//     $('.swiper-product .swiper-slide' + filter).css('display', '')
+//     $( '.swiper-filter a' ).removeClass( 'swiper-active' );
+//     $( this ).addClass( 'swiper-active' );
+    
+//     productSwiper.updateSize();
+//     productSwiper.updateSlides();
+//     productSwiper.updateProgress();
+//     productSwiper.updateSlidesClasses();
+//     productSwiper.slideTo(0);
+//     productSwiper.scrollbar.updateSize();
+    
+//     return false;
+//   });
+
+//   var filterSwiper = new Swiper ('.swiper-filter', {
+//       slidesPerView: 3,
+//       spaceBetween: 30,
+//     })
+  
+//   var productSwiper = new Swiper ('.swiper-product', {
+//       /*grabCursor: true,*/
+//       observer: true,
+//       slidesPerView: 3.2,
+//       runCallbacksOnInit: true,
+//       observer: true,
+//       breakpoints: {
+//         480: {
+//           slidesPerView: 1,
+//           spaceBetween: 10
+//         },
+//         640: {
+//           slidesPerView: 2.2,
+//           spaceBetween: 20
+//         }
+//       },
+//       spaceBetween: 30,
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       // If we need pagination
+//       pagination: {
+//         el: '.swiper-pagination',
+//         clickable : true,
+//       },
+//       // And if we need scrollbar
+//       scrollbar: {
+//         el: '.swiper-scrollbar',
+//         draggable : true,
+//         snapOnRelease : true,
+//       },
+//       scrollbarHide:false,
+//       updateOnImagesReady: true
+//     })
+  
+// });
+
 
 
 
@@ -447,5 +570,6 @@ class TapPopup {
     TapPopup,
     focusField,
     blurField,
-    tabsSwitch
+    tabsSwitch,
+    feedbackSwiper
 	}
