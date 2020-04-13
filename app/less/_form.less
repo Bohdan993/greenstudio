@@ -17,17 +17,97 @@
     width: 100%;
     min-height: 100vh;
     height: auto;
-    background: yellow;
+    background: @white;
     
 
     .center {
     	 min-height: 100vh;
-    height: auto;
+    	 padding: 64px 30px;
+    		height: auto;
     }
     .f-container {
-    	padding: 64px 0;
-			 min-height: 100vh;
-    	height: auto;
+    	
+			min-height: 100%;
+    	height: calc(100vh - (64px * 2));
 			align-items: center;
+			justify-content: center;
+			flex-wrap: nowrap;
     }
+}
+
+
+.leave-contact__left {
+	flex: 0 1 60%;
+}
+
+.leave-contact__right {
+	flex: 0 1 40%;
+}
+
+.leave-contact__form-wrapper {
+	  box-shadow: 0px 15px 70px 0px rgba(@teal, .66);
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 50px 1px;
+    max-width: 90%;
+    min-width: 90%;
+		background-color: transparent;
+    background-image: linear-gradient(135deg, @teal, @main-color);
+    border-radius: 25px;
+    padding: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leave-contact__form {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+ 
+}
+
+
+.leave-contact__form-group {
+	display: flex;
+	flex-basis: 100%;
+	justify-content: space-between;
+
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+
+	.form-group-wrap {
+			margin-bottom: 0;
+			width: 100%;
+			max-width: 275px;
+			display: flex;
+			justify-content: center;
+
+			.tap-popup__form-ico {
+				// left: 44px;
+			}
+	}
+
+	.form-group {
+		max-width: 275px;
+	}
+
+	.text-field {
+		max-width: 100%;
+	}
+}
+
+.leave-contact__btn {
+	max-width: 275px;
+
+	.btn-text {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+    	margin-left: 10px;
+    }
+	}
 }

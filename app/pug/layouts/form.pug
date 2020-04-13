@@ -2,5 +2,41 @@
 	.leave-contact__layer.section__layer
 		.center
 			.f-container
+				.leave-contact__left
 					h2.h2-title.leave-contact-title.gradient-green
 						|Хотите сотрудничать с нами?
+					p.subtitle.leave-contact-subtitle
+						|Оставьте свои конакты и мы с вами свяжемся в течение 30 минут
+					.leave-contact__form-wrapper
+						form.leave-contact__form
+							.leave-contact__form-group
+								.form-group-wrap
+									i.material-icons.tap-popup__form-ico
+										|account_circle
+									.form-group.tap-popup__form-group
+										input#leave-name.validate.text-field.tap-popup__text-field(placeholder='' type='text')
+										label(for='leave-name')
+											|Ваше имя
+									
+								.form-group-wrap
+									i.material-icons.tap-popup__form-ico
+										|phone
+									.form-group.tap-popup__form-group
+										input#leave-phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='')
+										label(for='leave-phone')
+											|Ваш телефон
+							.leave-contact__form-group
+								.form-group-wrap
+									i.material-icons.tap-popup__form-ico
+										|mail
+									.form-group.tap-popup__form-group
+										input#leave-email.validate.text-field.tap-popup__text-field(type='email' placeholder='')
+										label(for='leave-email')
+											|Ваша почта
+								.form-group-wrap
+									button.main-btn.leave-contact__btn(type='submit' name='action')
+										span.btn-overlay
+										span.btn-text
+											|Отправить
+											i.material-icons.right send
+				.leave-contact__right

@@ -8,8 +8,9 @@ html {
 
 html,
 body {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   color: @white;
+  height: 100%;
 }
 
 ::selection {
@@ -84,8 +85,12 @@ input {
   text-align: center;
 }
 
+
+main {
+  height: 100%;
+}
 .center {
-  max-width: 1170px + 30px + 30px;
+  max-width: 1540px + 30px + 30px;
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
@@ -470,6 +475,7 @@ canvas {
 @import url("app/less/_portfolio.less");
 @import url("app/less/_feedback.less");
 @import url("app/less/_form.less");
+@import url("app/less/_about.less");
 @import url("app/less/_footer.less");
 
 

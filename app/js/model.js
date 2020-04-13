@@ -9,9 +9,41 @@
 		this.header = header;
 	}
 
-	static wrapperHeight(el, lastElem){
+
+
+static wrapperHeight(el, lastElem){
+
+  let throttle = function(func, ms){
+    let isThrottled = false, 
+      savedArgs, 
+      savedThis;
+
+    function wrapper () {
+      if (isThrottled) {
+        savedArgs = arguments;
+        savedThis = this;
+        return;
+      }
+
+      // console.log(arguments);
+      func.apply(this, arguments);
+
+      isThrottled = true;
+
+      setTimeout(function(){
+        isThrottled = false;
+        if(savedArgs) {
+          wrapper.apply(savedThis, savedArgs);
+          savedArgs = savedThis = null;
+        }
+      }, ms)
+    }
+    return wrapper;
+  }
+
+
  	let addSizes = () => {
-      let offset = 0;
+      // let offset = 0;
       let flag = false;
 			el.style.top = 'auto';
 			el.style.left = 'auto';
@@ -28,24 +60,46 @@
 				return previousValue + currentValue;
 			})
 
+      // console.log(pbSum);
+
 			el.style.paddingBottom = pbSum + 'px';
-      window.addEventListener('scroll', function(){
-        offset = this.pageYOffset;
-        if(this.pageYOffset > pbSum && !flag) {
-          // flag = true;
+      
+
+
+      let addSizes2 =  function (a) {
+          // console.log(a);
+          // console.log(this);
+          let pb = [...el.querySelectorAll('.circle__layer')].map(function(item, ind){
+              return item.offsetHeight;
+          })
+          // console.log(pb);
+          let pbSum = pb.reduce(function(previousValue, currentValue){
+              return previousValue + currentValue;
+          })
+           if(this.pageYOffset > pbSum && !flag) {
+        
+            // console.log(this.pageYOffset > pbSum);
             lastElem.style.position = 'relative';
             el.style.paddingTop = pbSum + 'px';
             el.style.paddingBottom = 0 + 'px';
             // console.log(flag);
-        } else {
+              flag = true;
+        } else if (this.pageYOffset < pbSum && flag) {
             // flag = false;
             lastElem.style.position = 'fixed';
             el.style.paddingBottom = pbSum + 'px';
             el.style.paddingTop = 0 + 'px';
+            flag = false;
         }
-      })
+      }
 
-      console.log(offset);
+      addSizes2 = throttle(addSizes2, 100);
+      window.addEventListener('scroll', function (e){
+        // console.log(this);
+        addSizes2.call(this);
+      });
+      window.addEventListener('resize', addSizes2);
+      // console.log(offset);
 		
     }
 		window.addEventListener('resize', addSizes);
@@ -76,9 +130,9 @@
 			let flag = false;
 			let arr = [];
 			let circleFunc = () => {
-
+        // console.log(count)
 				
-				count%2 == 0 ? this.header.classList.remove('active'): this.header.classList.add('active');
+				count%2 == 0 &&  window.pageYOffset <= this.summHeigth()[this.summHeigth().length - 1]? this.header.classList.remove('active'): this.header.classList.add('active');
 
 
 				let diff = (window.pageYOffset/ (this.summHeigth()[count]/ (count + 1)) - count) < 0.3;
@@ -131,7 +185,7 @@
 
 				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight <= window.pageYOffset && !flag){
           this.header.classList.add('active');
-          // console.log('yes');
+          // console.log(this.header);
 					 this.el.forEach((el, index)=>{
 						el.style.opacity = '0';
 					})
