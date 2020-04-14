@@ -11,6 +11,9 @@ body {
   // overflow-x: hidden;
   color: @white;
   height: 100%;
+  width: 100%;
+  // min-width: 100vw;
+  // width: 100vw;
 }
 
 ::selection {
@@ -20,7 +23,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: @font-color;
@@ -28,6 +31,7 @@ body {
   letter-spacing: 0.03rem;
   line-height: 148.69%;
   background-color: @white;
+
 }
 
 div,
@@ -88,6 +92,7 @@ input {
 
 main {
   height: 100%;
+  width: 100%;
 }
 .center {
   max-width: 1540px + 30px + 30px;
@@ -417,6 +422,39 @@ canvas {
   letter-spacing: 0px;
   font-weight: 600;
   margin-bottom: 60px;
+}
+
+
+.main-wrapper {
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(@black, 0.6);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+  // opacity: 0;
+}
+.open-menu .main-wrapper {
+  transform: translateX(-360px);
+  position: fixed;
+  opacity: 1;
+
+  &:before {
+    opacity: 1;
+    z-index: 100;
+  }
 }
 
 // .h2-title_g {

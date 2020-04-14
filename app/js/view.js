@@ -39,6 +39,10 @@ tabs = [...tabs];
 let lastElem = document.querySelector('.last-elem');
 
 
+let burger = document.querySelector('.burger-wrap');
+let closeBurger = document.querySelector('.close-burger-wrap');
+
+
 
 export {
 	preview,
@@ -53,5 +57,7 @@ export {
 	tapClose,
 	textFields,
 	tabs,
-	lastElem
+	lastElem,
+	burger,
+	closeBurger
 }

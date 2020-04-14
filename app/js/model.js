@@ -42,7 +42,22 @@ static wrapperHeight(el, lastElem){
   }
 
 
- 	let addSizes = () => {
+//   let unwrap = function (wrapper) {
+//     // place childNodes in document fragment
+//     var docFrag = document.createDocumentFragment();
+//     while (wrapper.firstChild) {
+//         var child = wrapper.removeChild(wrapper.firstChild);
+//         docFrag.appendChild(child);
+//     }
+
+//     // replace wrapper with document fragment
+//     wrapper.parentNode.replaceChild(docFrag, wrapper);
+// }
+
+
+
+
+ 	let addSizes = function () {
       // let offset = 0;
       let flag = false;
 			el.style.top = 'auto';
@@ -50,6 +65,7 @@ static wrapperHeight(el, lastElem){
 			el.style.bottom = 'auto';
 			el.style.right = 'auto';
 			el.style.display = 'block';
+      el.style.width = '100%';
 			el.style.boxSizing = 'content-box';
 			el.style.minHeight = el.style.height = document.documentElement.clientHeight + 'px';
 			el.style.position = 'relative';
@@ -95,15 +111,33 @@ static wrapperHeight(el, lastElem){
 
       addSizes2 = throttle(addSizes2, 100);
       window.addEventListener('scroll', function (e){
-        // console.log(this);
-        addSizes2.call(this);
+       if(this.innerWidth > 767) {
+          addSizes2.call(this);
+        }
       });
-      window.addEventListener('resize', addSizes2);
+      window.addEventListener('resize', function(e){
+          if(this.innerWidth > 767) {
+            addSizes2.call(this);
+          }
+      });
       // console.log(offset);
 		
     }
-		window.addEventListener('resize', addSizes);
-		window.addEventListener('load', addSizes);
+		window.addEventListener('resize', function(e){
+      if(this.innerWidth > 767) {
+        addSizes.call(this);
+      } else {
+        // unwrap(document.querySelector('.scrollmagic'));
+      }
+      
+    });
+		window.addEventListener('load', function(e){
+       if(this.innerWidth > 767) {
+        addSizes.call(this);
+      } else {
+        // unwrap(document.querySelector('.scrollmagic'));
+      }
+    });
 	}
 
 	checkSize(){
@@ -126,6 +160,7 @@ static wrapperHeight(el, lastElem){
 
 
 	scroll() {
+
 			let count = 0;
 			let flag = false;
 			let arr = [];
@@ -206,11 +241,24 @@ static wrapperHeight(el, lastElem){
           flag = false;
         }
 			}
-			setTimeout(()=>{window.addEventListener('load', circleFunc)}, 0);
-			window.addEventListener('scroll', circleFunc);
-			window.addEventListener('resize', circleFunc)
+			setTimeout(()=>{window.addEventListener('load', function(){
+          if(this.innerWidth > 767) {
+            circleFunc();
+          }
+      })}, 0);
+			window.addEventListener('scroll', function(){
+        if(this.innerWidth > 767) {
+          circleFunc();
+        }
+      });
+			window.addEventListener('resize', function(){
+        if(this.innerWidth > 767) {
+          circleFunc();
+        }
+      })
 
 		}
+
 	}
 
 
@@ -355,6 +403,20 @@ class TapPopup {
           feedbackSwiper.slideToLoop(0);
           // feedbackSwiper.scrollbar.updateSize();
       })
+    })
+  }
+
+
+
+  let burgerMenu = (open, close) => {
+    open.addEventListener('click', function(){
+      document.querySelector('body').classList.add('fixed');
+      document.querySelector('body').classList.add('open-menu');
+    })
+
+    close.addEventListener('click', function(){
+      document.querySelector('body').classList.remove('fixed');
+      document.querySelector('body').classList.remove('open-menu');
     })
   }
 
@@ -627,5 +689,6 @@ class TapPopup {
     focusField,
     blurField,
     tabsSwitch,
-    feedbackSwiper
+    feedbackSwiper,
+    burgerMenu
 	}

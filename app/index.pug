@@ -41,6 +41,7 @@ block head-end
 block links
 	link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' rel='stylesheet')
 	link(href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet")
 	link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 
 
@@ -53,15 +54,15 @@ block links
 
 
 block content
-	include pug/layouts/header
-	main
-		.scrollmagic
-			include pug/layouts/preview
-			include pug/layouts/portfolio
-			include pug/layouts/feedback
-			include pug/layouts/form
-		include pug/layouts/about
-	//- include pug/layouts/_popup
-	//- include pug/layouts/footer
-	include pug/layouts/_popup
+	.main-wrapper
+		include pug/layouts/header
+		main
+			.scrollmagic
+				include pug/layouts/preview
+				include pug/layouts/portfolio
+				include pug/layouts/feedback
+				include pug/layouts/form
+			include pug/layouts/about
+		//- include pug/layouts/footer
+		include pug/layouts/_popup
 

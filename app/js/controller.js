@@ -1,5 +1,5 @@
-import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch, feedbackSwiper} from './model';
-import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs, lastElem} from './view';
+import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch, feedbackSwiper, burgerMenu} from './model';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs, lastElem, burger, closeBurger} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -14,6 +14,7 @@ let app = {
 		this.tapTarget();
 		this.textFields();
 		this.tabs();
+		this.burger();
 	},
 	scroll(){
 		let el = new ScrollElem(preview, prevBg, circleHidden, header);
@@ -34,7 +35,8 @@ let app = {
 	swiper(){
 		let mySwiper = new swiper ('.swiper-container', {
     // Optional parameters
-    direction: 'vertical',
+    // direction: 'vertical',
+    slidesPerView: 2,
     loop: true,
 
     // If we need pagination
@@ -50,17 +52,18 @@ let app = {
     // mousewheel: {
     // 	sensitivity: 2
     // }
-    slidesPerView: 1,
-      fadeEffect: {
-    crossFade: true
-  	},
-  	effect: 'fade',
+    // slidesPerView: 1,
+   //    fadeEffect: {
+   //  crossFade: true
+  	// },
+  	// effect: 'fade',
 
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-control-next',
       prevEl: '.swiper-control-prev',
     },
+
 
     // And if we need scrollbar
     // scrollbar: {
@@ -112,6 +115,10 @@ let app = {
 
 	tabs(){
 		tabsSwitch(tabs);
+	},
+
+	burger(){
+		burgerMenu(burger, closeBurger);
 	}
 
 }
