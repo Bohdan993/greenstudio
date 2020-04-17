@@ -34,7 +34,8 @@
 
 
 .header__layer {
-	background: linear-gradient(135deg, @teal, @main-color);
+	// background: linear-gradient(135deg, @teal, @main-color);
+	background: @white;
 	height: 100%;
 	border-color: @main-color;
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.12), 0px 4px 5px 0px rgba(0, 0, 0, 0.08), 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
@@ -66,6 +67,31 @@
 .header__top-btn {
 	flex: 0 1 33%;
 	padding: 0 15px;
+	.main-btn {
+		background: @teal;
+
+		.btn-overlay {
+			color: @white;
+			&:after {
+				background: @accent;
+			}
+		}
+
+		&:hover {
+			.btn-overlay{
+				&:after {
+					background: @accent;
+					// color: @white;
+				}
+			}
+
+			// .btn-text {
+			// 	color: @white;
+			// }
+		
+			
+		}
+	}
 }
 
 .header__top-nav {
@@ -96,7 +122,7 @@
 }
 
 .header__top-nav-link {
-	color: @white;
+	color: @font-color;
 }
 
 

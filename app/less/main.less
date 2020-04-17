@@ -5,7 +5,9 @@
 html {
   font-size: 16px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   // overflow-x: hidden;
@@ -23,7 +25,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: @font-color;
@@ -234,7 +236,7 @@ canvas {
   // }
 
     &:hover {
-      color: @accent;
+      color: @white;
       & .btn-overlay {
         transform: translate(-50%, -50%) scale(1,1);
       }
@@ -263,7 +265,7 @@ canvas {
 
 .h1-title {
  .fSize(72vw, 72px * (576/1600), 72px, 576px, 1600px);
-  color: @main-color;
+  color: @font-color;
   font-weight: 700;
   line-height: 1.35;
   text-align: center;

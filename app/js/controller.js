@@ -44,7 +44,7 @@ let app = {
       el: '.swiper-pagination',
       type: 'fraction',
       renderFraction: function(currentClass, totalClass) {
-      	 return '<span class="swiper-count ' + currentClass + '"></span>' + '<span class="swiper-count ' + totalClass + '"></span>';
+      	 return '<span class="swiper-count ' + currentClass + '"></span>' + ' <span class="pagination-divider"> из </span>' + '<span class="swiper-count ' + totalClass + '"></span>';
       }
 
     },
@@ -63,6 +63,8 @@ let app = {
       nextEl: '.swiper-control-next',
       prevEl: '.swiper-control-prev',
     },
+
+    // noSwipingClass: 'swiper-slide',
 
 
     // And if we need scrollbar

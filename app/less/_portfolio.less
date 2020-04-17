@@ -11,7 +11,7 @@
 
 	.center {
 		height: 100%;
-		.fPa(120%, 150%/2, 120px, 150px/2, 1230px, 1920px);
+		.fPa(90%, 150%/2, 90px, 150px/2, 1600px, 1920px);
 		max-width: unset;
 		padding-right: 0;
 		padding-left: 65px;
@@ -71,7 +71,7 @@
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	background: linear-gradient(135deg, @teal, @main-color);
+	background: @yellow;
 	border-radius: 50%;
 	top: 25%;
 	left: 44%;
@@ -118,13 +118,13 @@
 }
 
 .portfolio-circle6 {
-	width: 30px;
-	height: 30px;
+	width: 80px;
+	height: 80px;
 	position: absolute;
-	background: linear-gradient(135deg, @teal, @main-color);
+	background: @yellow;
 	border-radius: 50%;
 	top: 75%;
-	left: 78%;
+	left: 58%;
 }
 
 .portfolio-content {
@@ -217,24 +217,37 @@ border-radius: 25px;
 .swiper-container {
     flex: 0 1 100%;
     height: 100%;
+    max-height: 480px;
     position: relative;
     left: 16%;
+    // margin-top: 155px;
   .swiper-controls {
 		position: absolute;
-		right: 10px;
-		top: 50%;
+		left: 20px;
+		top: calc(100% - 45px);
 		transform: translateY(-50%);
 		z-index: 2;
 		display: flex;
-		flex-direction: column;
-		width: 55px;
+		// flex-direction: column;
+		width: 145px;
+		justify-content: space-between;
+		align-items: center;
 		i {
 			color: @white;
 		}
 	}
 
 	.swiper-control-prev {
-		margin-bottom: 25px;
+		//
+		i {
+			 transform: rotate(-90deg);
+		}
+	}
+
+	.swiper-control-next {
+			i {
+			 transform: rotate(-90deg);
+		}
 	}
 
     .swiper-slide {
@@ -262,20 +275,20 @@ border-radius: 25px;
 .swiper-pagination{
 	position: absolute;
 	left: 	0;
-	top: 50%;
+	top: calc(0% + 45px);
 	transform: translateY(-50%);
 	color: @white;
 	width: 	35px;
 	height: 	100px;
 	display: flex;	
-	flex-direction: column;
+	// flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	z-index: 3;
 }
 
 .swiper-count {
-	    border: none;
+	   border: none;
     border-radius: 2px;
     display: inline-block;
     height: 36px;

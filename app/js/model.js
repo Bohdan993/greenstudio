@@ -167,16 +167,17 @@ static wrapperHeight(el, lastElem){
 			let circleFunc = () => {
         // console.log(count)
 				
-				count%2 == 0 &&  window.pageYOffset <= this.summHeigth()[this.summHeigth().length - 1]? this.header.classList.remove('active'): this.header.classList.add('active');
+				// count%2 == 0 &&  window.pageYOffset <= this.summHeigth()[this.summHeigth().length - 1]? this.header.classList.remove('active'): this.header.classList.add('active');
 
 
 				let diff = (window.pageYOffset/ (this.summHeigth()[count]/ (count + 1)) - count) < 0.3;
+        // let diff2 = (window.pageYOffset/ (this.summHeigth()[count]/ (count + 1)) - count) < 0.55;
 			
       // console.log((count+1) - (window.pageYOffset/this.checkSize()[count] * 1.3));
       // console.log(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count] / 1.3);
 
-				diff ? this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) + 0.1}` : this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) - 0.4}`;
-				this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
+				diff ? this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) + 0.05}` : this.el[count].style.opacity = `${(((window.pageYOffset - +this.summHeigth()[count]) * -1) / this.checkSize()[count]) - 0.5}`;
+				diff ? this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - ((window.pageYOffset * 0.8)/this.checkSize()[count])})` : this.bg[count].style.transform = `translate(-50%, -50%) scale(${(count+1) - (window.pageYOffset/this.checkSize()[count])})`;
 				if(this.hidden[count + 1] !== undefined) {
 					this.hidden[count + 1].style.pointerEvents = 'all';
 					this.hidden[count + 1].style.opacity = '1';
@@ -219,7 +220,7 @@ static wrapperHeight(el, lastElem){
 					}
 
 				if(this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight <= window.pageYOffset && !flag){
-          this.header.classList.add('active');
+          // this.header.classList.add('active');
           // console.log(this.header);
 					 this.el.forEach((el, index)=>{
 						el.style.opacity = '0';
@@ -236,7 +237,7 @@ static wrapperHeight(el, lastElem){
           flag = true;
 				} else if (this.el[count].parentNode.parentNode.clientHeight - this.el[count].clientHeight >= window.pageYOffset && flag){
           this.el[this.el.length - 1].parentNode.style.pointerEvents = 'all';
-          this.header.classList.remove('active');
+          // this.header.classList.remove('active');
           // console.log('no');
           flag = false;
         }
@@ -362,21 +363,35 @@ class TapPopup {
   }
 
   let feedbackSwiper = new swiper('.feedback__tabs', {
-        direction: 'vertical',
+        // direction: 'vertical',
          observer: true,
         // loop: true,
         slidesPerView: 1,
         spaceBetween: 30,
         grabCursor: true,
-        fadeEffect: {
-        crossFade: true
-        },
-        effect: 'fade',
+         slidesPerView: 2,
+        // fadeEffect: {
+        // crossFade: true
+        // },
+        // effect: 'fade',
   });
 
 
   let tabsSwitch = (tabs)=>{
+     let slides = document.querySelectorAll('.feedback-slide');
+        slides = [...slides];
     tabs.forEach((el, ind)=>{
+      if(el.classList.contains('active')) {
+        let attr = el.getAttribute('data-tab');
+           slides.forEach((el, ind)=> {
+            let filter = el.getAttribute('data-card');
+            if(filter !== attr) {
+              el.style.display = 'none';
+            } else {
+              el.style.display = 'flex';
+            }
+          })
+      }
       el.addEventListener('click', function(){
         tabs.forEach((elem)=>{
           elem.classList.remove('active');
@@ -386,8 +401,8 @@ class TapPopup {
         el.parentNode.setAttribute('data-active', attr);
 
 
-        let slides = document.querySelectorAll('.feedback-slide');
-        slides = [...slides];
+        // let slides = document.querySelectorAll('.feedback-slide');
+        // slides = [...slides];
     
         slides.forEach((el, ind)=> {
           let filter = el.getAttribute('data-card');
