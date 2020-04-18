@@ -2,6 +2,16 @@
 	.circle-bg
 	.feedback__layer.section__layer.circle__layer
 		.cirle-hidden
+		.feedback-circle1.feedback-circle
+		.feedback-circle2.feedback-circle
+		.feedback-circle3.feedback-circle
+			i
+				+svg2('Group-11')
+		.feedback-circle4.feedback-circle
+		.feedback-circle5.feedback-circle
+			i
+				+svg2('Group-11')
+		.feedback-circle6.feedback-circle
 		.center
 			h2.h2-title.feedback-title
 					|Отзывы о нас
@@ -35,28 +45,49 @@
 													p.feedback-text__text
 														|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 									.swiper-slide.feedback-slide(data-card="screenshot")
-										|скриншот
+										//- |скриншот
 										.feedback__tab
 											.feedback-screenshot
-											//- .example__sound
-											//- 	.example__sound-progress-wrap
-											//- 	.example__sound-progress
-											//- 	.example__sound-icons
-											//- 	i.example__sound-play(title="Прослушать")
-											//- 	+svg2('play').active-state
-											//- 	+svg2('pause')
-											//- 	p.example__sound-text
-											//- 	|Ниша клиента
-											//- 	<audio class="audio-sound" src="audio/1.mp3"></audio>
-										//- .feedback__tab
-										//- 	img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+									.swiper-slide.feedback-slide(data-card="screenshot")
+										//- |скриншот
+										.feedback__tab
+											.feedback-screenshot
+												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
 									.swiper-slide.feedback-slide(data-card="audio")
-										|аудио
 										.feedback__tab
 											.feedback-audio
-												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
-										//- .feedback__tab
-										//- 	img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												.feedback-audio__left
+													.feedback-audio__img-wrap
+															img.feedback-audio__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												.feedback-audio__right
+													.feedback-audio__sound
+															.feedback-audio__sound-progress-wrap
+																.feedback-audio__sound-progress
+															.feedback-audio__sound-icons
+																i.feedback-audio__sound-play(title="Прослушать")
+																	+svg2('play').active-state
+																	+svg2('pause')
+															p.feedback-audio__sound-text
+																|Ниша клиента
+															audio(class="audio-sound" src="audio/Edge-Metalingus.mp3")
+									.swiper-slide.feedback-slide(data-card="audio")
+										.feedback__tab
+											.feedback-audio
+												.feedback-audio__left
+													.feedback-audio__img-wrap
+															img.feedback-audio__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												.feedback-audio__right
+													.feedback-audio__sound
+															.feedback-audio__sound-progress-wrap
+																.feedback-audio__sound-progress
+															.feedback-audio__sound-icons
+																i.feedback-audio__sound-play(title="Прослушать")
+																	+svg2('play').active-state
+																	+svg2('pause')
+															p.feedback-audio__sound-text
+																|Ниша клиента
+															audio(class="audio-sound" src="audio/Edge-Metalingus.mp3")
 									.swiper-slide.feedback-slide(data-card="text")
 										//- |текст
 										.feedback__tab
@@ -70,10 +101,17 @@
 													p.feedback-text__text
 														|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 									.swiper-slide.feedback-slide(data-card="video")
-										|видео
+										//- |видео
 										.feedback__tab
-											.feedback-video
+											.feedback-video(data-video="hBj0-dIU8HI")
 												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												.play
+									.swiper-slide.feedback-slide(data-card="video")
+										//- |видео2
+										.feedback__tab
+											.feedback-video(data-video="hBj0-dIU8HI")
+												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												.play
 				
 										//- .feedback__tab
 										//- 	img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")

@@ -43,6 +43,11 @@ let burger = document.querySelector('.burger-wrap');
 let closeBurger = document.querySelector('.close-burger-wrap');
 
 
+let playBtns = document.querySelectorAll('.play');
+
+playBtns = [...playBtns];
+
+
 
 export {
 	preview,
@@ -59,5 +64,6 @@ export {
 	tabs,
 	lastElem,
 	burger,
-	closeBurger
+	closeBurger,
+	playBtns
 }

@@ -1,0 +1,27 @@
+.footer__layer {
+	background: @font-color;
+	.fPa(120%, 150%/2, 120px, 150px/2, 1600px, 1920px);
+	color: @white;
+}
+
+
+.footer-title {
+	color: @white;
+}
+
+
+.footer-contact {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	i, a, p {
+		color: @white;
+	}
+
+	i {
+		margin-right: 10px;
+	}
+}

@@ -56,14 +56,15 @@ block links
 
 block content
 	.main-wrapper
-		include pug/layouts/header
+		
 		main
+			include pug/layouts/header
 			.scrollmagic
 				include pug/layouts/preview
 				include pug/layouts/portfolio
 				include pug/layouts/feedback
 				include pug/layouts/form
 			include pug/layouts/about
-		//- include pug/layouts/footer
+			include pug/layouts/footer
 		include pug/layouts/_popup
 

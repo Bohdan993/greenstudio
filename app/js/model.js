@@ -436,6 +436,169 @@ class TapPopup {
   }
 
 
+
+
+ let listenSound = () => {
+        document.addEventListener("click", function(e){
+          playSound(e);
+        });
+        let audioSounds = document.querySelectorAll(".audio-sound");
+        let playState = [];
+        audioSounds.forEach(el => playState.push(false));
+
+        function playSound(e) {
+
+    
+            if(e.target.classList.contains('feedback-audio__sound-play')) {
+            let audio = e.target.parentNode.parentNode.querySelector(".audio-sound");
+            audioSounds.forEach((el, i) => {
+                if (el == audio) {
+                    let interval;
+                    console.log(i);
+                    if (!playState[i]) {
+                        document.querySelectorAll('.audio-sound').forEach((el, ind)=>{
+                          el.pause();
+                          playState[ind] = false;
+                          el.parentNode.querySelector('.feedback-audio__sound-play').classList.remove('paused');
+                          el.parentNode.querySelector('.feedback-audio__sound-play').setAttribute('title', 'Воспроизвести');
+                          el.parentNode.querySelectorAll('svg').forEach((el, ind)=>{
+                              el.classList.remove('active-state');
+                            })
+                          el.parentNode.querySelector('svg:nth-child(1)').classList.add('active-state');
+                          el.previousElementSibling.style.color = '#fafafa';
+                          el.parentNode.querySelector('.feedback-audio__sound-progress').style.background = '#ffffff';
+                        })
+                        audio.play();
+                        playState[i] = true;
+
+                        e.target.classList.add('paused');
+                        e.target.setAttribute('title', 'Приостановить');
+
+                        e.target.querySelectorAll('svg').forEach((el, ind)=>{
+                          el.classList.remove('active-state');
+                        })
+                        
+                        e.target.querySelector('svg:nth-child(2)').classList.add('active-state');
+
+                        e.target.parentNode.nextElementSibling.style.color = '#ffffff';
+                        e.target.parentNode.parentNode.querySelector('.feedback-audio__sound-progress').style.background = '#6332f6';
+                        e.target.parentNode.parentNode.querySelector('.feedback-audio__sound-progress').style.display = 'block';
+
+                        interval = setInterval(() => {
+                            e.target.parentNode.parentNode.querySelector('.feedback-audio__sound-progress').style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+                            if (audio.paused) {
+                                clearInterval(interval);
+                            }
+                        }, 100);
+
+                        audio.addEventListener("ended", function() {
+                            playState[i] = false;
+                            console.log(playState);
+
+                            e.target.parentNode.parentNode.querySelector('.feedback-audio__sound-progress').style.display = 'none';
+                            
+                            e.target.classList.remove('paused');
+                            e.target.setAttribute('title', 'Воспроизвести');
+                           
+
+                            e.target.parentNode.nextElementSibling.style.color = '#fafafa';
+                          
+                             e.target.querySelectorAll('svg').forEach((el, ind)=>{
+                              el.classList.remove('active-state');
+                            })
+                          e.target.querySelector('svg:nth-child(1)').classList.add('active-state');
+                        });
+                    } else {
+                        audio.pause();
+                        playState[i] = false;
+
+                        e.target.classList.remove('paused');
+                        e.target.setAttribute('title', 'Воспроизвести');
+
+                        e.target.querySelectorAll('svg').forEach((el, ind)=>{
+                          el.classList.remove('active-state');
+                        })
+
+                        e.target.querySelector('svg:nth-child(1)').classList.add('active-state');
+
+                        e.target.parentNode.nextElementSibling.style.color = '#fafafa';
+
+                        e.target.parentNode.parentNode.querySelector('.feedback-audio__sound-progress').style.background = '#ffffff';
+                      
+                    }
+                }
+            })
+          }
+        }
+
+
+
+        document.querySelectorAll('.feedback-audio__sound-progress-wrap').forEach((el, ind)=>{
+          el.addEventListener('click', function(e){
+
+            let audioTime = el.parentNode.querySelector('.audio-sound');
+            let duration = audioTime.duration;
+
+
+            if (
+                el.parentNode.querySelector('.feedback-audio__sound-play svg:first-child').classList.contains('active-state')
+            ) {
+                el.querySelector('.feedback-audio__sound-progress').style.background = '#ffffff';
+            }
+
+
+              if (duration > 0) {
+                // let offset = $(this).offset();
+                let box = el.getBoundingClientRect();
+                let offsetLeft = box.left + pageXOffset;
+
+                let left = e.clientX -  offsetLeft;
+
+                let width = el.offsetWidth;
+
+                el.querySelector(".feedback-audio__sound-progress").style.width = `${(left / width) * 100}%`;
+                el.querySelector(".feedback-audio__sound-progress").style.display = "block";
+                audioTime.currentTime =  ((duration * left) / width);
+            }
+
+            return false;
+
+          })
+        })
+
+        // $(".example__sound-progress-wrap").on("click", function(e) {
+        //     let audioTime = $(this)
+        //         .closest(".example__sound")
+        //         .find(".audio-sound");
+        //     let duration = audioTime.prop("duration");
+    
+        //     if (duration > 0) {
+        //         let offset = $(this).offset();
+        //         let left = e.clientX - offset.left;
+        //         let width = $(this).width();
+        //         $(this)
+        //             .find(".example__sound-progress")
+        //             .css({ width: `${(left / width) * 100}%`, display: "block" });
+        //         audioTime.prop("currentTime", (duration * left) / width);
+        //     }
+        //     return false;
+        // });
+    }
+
+
+let playVideo = (btn)=> {
+  console.log('video');
+  btn.forEach((el, ind)=>{
+    el.addEventListener('click', function(){
+      let video = el.parentNode.getAttribute('data-video');
+      let youtube = '<iframe src="https://www.youtube.com/embed/' + video + '?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>';
+      el.parentNode.insertAdjacentHTML('beforeend', youtube);
+    })
+  })
+}
+
+
+
 //   $(document).ready(function(){
   
 //   $('.swiper-filter').on( 'click', 'a', function() {
@@ -705,5 +868,7 @@ class TapPopup {
     blurField,
     tabsSwitch,
     feedbackSwiper,
-    burgerMenu
+    burgerMenu,
+    listenSound,
+    playVideo
 	}

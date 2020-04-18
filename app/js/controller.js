@@ -1,5 +1,5 @@
-import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch, feedbackSwiper, burgerMenu} from './model';
-import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs, lastElem, burger, closeBurger} from './view';
+import {ScrollElem, setZindex, portfolio, TapPopup, focusField, blurField, tabsSwitch, feedbackSwiper, burgerMenu, listenSound, playVideo} from './model';
+import {preview, prevBg, scrollmagic, circleSections, circleHidden, header, portfolioCards, tapOpen, tapClose, textFields, tabs, lastElem, burger, closeBurger, playBtns} from './view';
 import {swiper, waves} from '../libs/libs';
 
 
@@ -15,6 +15,8 @@ let app = {
 		this.textFields();
 		this.tabs();
 		this.burger();
+		this.sound();
+		this.video();
 	},
 	scroll(){
 		let el = new ScrollElem(preview, prevBg, circleHidden, header);
@@ -121,6 +123,14 @@ let app = {
 
 	burger(){
 		burgerMenu(burger, closeBurger);
+	},
+
+	sound(){
+		listenSound();
+	},
+
+	video(){
+		playVideo(playBtns);
 	}
 
 }
