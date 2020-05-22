@@ -1,46 +1,53 @@
-.leave-contact.last-elem
+.leave-contact.last-elem.scrollmagic-elem
 	.leave-contact__layer.section__layer
-		.center
-			.f-container
-				.leave-contact__left
-					h2.h2-title.leave-contact-title
-						|Хотите сотрудничать с нами?
-					p.subtitle.leave-contact-subtitle
-						|Оставьте свои конакты и мы с вами свяжемся в течение 30 минут
-					.leave-contact__form-wrapper
-						form.leave-contact__form
-							.leave-contact__form-group
-								.form-group-wrap
-									i.material-icons.tap-popup__form-ico
-										|account_circle
-									.form-group.tap-popup__form-group
-										input#leave-name.validate.text-field.tap-popup__text-field(placeholder='' type='text')
-										label(for='leave-name')
-											|Ваше имя
-									
-								.form-group-wrap
-									i.material-icons.tap-popup__form-ico
-										|phone
-									.form-group.tap-popup__form-group
-										input#leave-phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='')
-										label(for='leave-phone')
-											|Ваш телефон
-							.leave-contact__form-group
-								.form-group-wrap
-									i.material-icons.tap-popup__form-ico
-										|mail
-									.form-group.tap-popup__form-group
-										input#leave-email.validate.text-field.tap-popup__text-field(type='email' placeholder='')
-										label(for='leave-email')
-											|Ваша почта
-								.form-group-wrap
-									button.main-btn.leave-contact__btn(type='submit' name='action')
-										span.btn-overlay
-										span.btn-text
-											|Отправить
-											i.material-icons.right send
-				.leave-contact__right
-					.leave-contact__shapes
-						.leave-contact__shape1
-						.leave-contact__shape2
-					img.leave-contact__img(src="img/mobile-leave-contact.png", alt="Phone")
+		.background-layer
+			.background-layer-img
+			.background-layer-figure
+		.after-hidden
+		h2.h2-title.leave-contact-title
+			|Хотите сотрудничать с нами?
+		p.subtitle.leave-contact-subtitle
+			|Оставьте контакты, и мы свяжемся с вами в течение 30 минут
+			.center
+				.f-container
+					.leave-contact__left
+						picture
+							source(type="image/webp" data-srcset="img/leave-contact-img.webp")
+							source(type="image/png" data-srcset="img/leave-contact-img.png")
+							img(data-src="img/leave-contact-img.png" alt="Background"  class="lazy")
+					.leave-contact__right
+						.leave-contact__form-wrapper
+							h3.leave-contact__form-title
+								|Ваши данные
+							form.leave-contact__form#leave-contact__form
+								input(type="hidden" name="subject" value="Форма 'Хотите сотрудничать с нами?'")
+								.leave-contact__form-group
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|account_circle
+										.form-group.tap-popup__form-group
+											input#leave-name.validate.text-field.tap-popup__text-field(placeholder='' type='text' name="name")
+											label(for='leave-name')
+												|Ваше имя
+										
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|phone
+										.form-group.tap-popup__form-group
+											input#leave-phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='' name="phone")
+											label(for='leave-phone')
+												|Ваш телефон
+								.leave-contact__form-group
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|mail
+										.form-group.tap-popup__form-group
+											input#leave-email.validate.text-field.tap-popup__text-field(type='email' placeholder='' name="email")
+											label(for='leave-email')
+												|Ваша почта
+									.form-group-wrap
+										button.main-btn.leave-contact__btn(type='submit' name='action')
+											span.btn-overlay
+											span.btn-text
+												|Отправить
+												i.material-icons.right send

@@ -4,12 +4,12 @@
 			.tap-popup
 				.tap-popup__content
 					form.tap-popup__form#tap-popup__form
-						
+						input(type="hidden" name="subject" value="Форма фиксированная")
 						.form-group-wrap
 							i.material-icons.tap-popup__form-ico
 								|account_circle
 							.form-group.tap-popup__form-group
-								input#name.validate.text-field.tap-popup__text-field(placeholder='' type='text')
+								input#name.validate.text-field.tap-popup__text-field(placeholder='' type='text' name="name")
 								label(for='name')
 									|Ваше имя
 							
@@ -17,7 +17,7 @@
 							i.material-icons.tap-popup__form-ico
 								|phone
 							.form-group.tap-popup__form-group
-								input#phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='')
+								input#phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='' name="phone")
 								label(for='phone')
 									|Ваш телефон
 						button.main-btn.teal.tap-popup__btn(type='submit' name='action')
@@ -25,37 +25,7 @@
 							span.btn-text
 								|Отправить
 								i.material-icons.right send
-			.tap-popup-wave
-				a.btn-control.wave.tap-popup-close(data-close="#callback-popup")
-					i.material-icons.tap-close-ico
-						|phone
-		//- 			select#phone-select.phone-select(name='phone-select')
-		//- 				option(value='tel:+380676327873') 
-		//- 					|+38 (067) 632 78 73
-		//- 				option(value='tel:+380952024144')
-		//- 					|+38 (095) 202 41 44
-		//- 				option(value='tel:+380637206773')
-		//- 					|+38 (063) 720 67 73
-		//- 			.popup-links-block
-		//- 				.mfp-close.popup-link__reject
-		//- 					|Отменить
-		//- 				a.popup-link__call(href='tel:+79037788894')
-		//- 					|Вызвать
-		//- #thanks-popup.zoom-anim-dialog.mfp-with-anim.mfp-hide.thanks-dialog.popup-window 
-		//- 	.center
-		//- 		h2.h2-title_l
-		//- 			|Спасибо, Ваша заявка отправлена!
-		//- #callback-popup.zoom-anim-dialog.mfp-with-anim.mfp-hide.thanks-dialog.popup-window 
-		//- 	.center
-		//- 		h2.h2-title_l
-		//- 			|Оставьте всои конакты, и мы вам перезвоним.
-		//- 		.f-container
-		//- 			form#callback__form.callback__form(method="POST" action="javascript:void(null)")
-		//- 				input(type="hidden" name="subject" value="Форма обратного звонка")
-		//- 				.form-group
-		//- 					input(type="text" placeholder="Ваше имя" required name="name" class="text-field")
-		//- 				.form-group
-		//- 					input(type="tel" placeholder="Ваш телефон" required name="phone" class="text-field")
-		//- 				button(type='submit').main-btn.callback-btn
-		//- 					|Отправить
-		
+		.tap-popup-wave
+			a.btn-control.wave.tap-popup-open(data-open="#callback-popup")
+				i.material-icons.tap-close-ico
+					|phone

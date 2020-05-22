@@ -1,0 +1,35 @@
+.present
+	.present__layer.section__layer
+		h2.h2-title.present-title
+			|Презент для вас
+		p.subtitle.present-subtitle
+			|Закажите лендинг под ключ и получите полгода бесплатного хостинга в подарок!
+			.center
+				.f-container
+					.present__content
+						.present__form-wrapper
+							//- h3.present__form-title
+							//- 	|Ваши данные
+							form.present__form
+
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|account_circle
+										.form-group.tap-popup__form-group
+											input#present-name.validate.text-field.tap-popup__text-field(placeholder='' type='text')
+											label(for='present-name')
+												|Ваше имя
+										
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|phone
+										.form-group.tap-popup__form-group
+											input#present-phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='')
+											label(for='present-phone')
+												|Ваш телефон
+									.form-group-wrap
+										button.main-btn.present__btn(type='submit' name='action')
+											span.btn-overlay
+											span.btn-text
+												|Отправить
+												i.material-icons.right send

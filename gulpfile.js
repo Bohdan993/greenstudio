@@ -24,6 +24,8 @@ const replace = require('gulp-replace');
 const spritesmith = require('gulp.spritesmith');
 const webpack = require('webpack-stream');
 const gulpif = require('gulp-if');
+const webp = require("imagemin-webp");
+const extReplace = require("gulp-ext-replace");
 let smartgrid = require('smart-grid');
 
 
@@ -295,6 +297,19 @@ function images() {
 }
 
 
+// function convertToWebp () {
+//     const src2 = './app/img/**/*.png'
+//     const dest2 = './dist/img'
+//     return src(src2)
+//     .pipe(plumber())
+//     .pipe(img([webp({quality: 75})]))
+//     // .pipe(img([img.webp({quality: 75})]))
+//     .pipe(extReplace(".webp"))
+//     .pipe(dest(dest2))
+//     .pipe(browserSync.stream());
+// }
+
+
 
 function sprites() {
     return src('./app/img/sprites/svg/*.svg')
@@ -388,6 +403,7 @@ function watch() {
     gulp.watch('./app/libsCSS/**/*.less', libsCSS);
     gulp.watch('./app/fonts/**/*', fonts);
     gulp.watch('./app/**/*.pug', pug);
+    // gulp.watch('./app/img/**/*.{jpg,png}', convertToWebp);
     gulp.watch('./dist/**/*.html').on('change', browserSync.reload);
 }
 
@@ -410,6 +426,7 @@ exports.images = images;
 exports.fonts = fonts;
 // exports.html = html;
 exports.pug = pug;
+// exports.convertToWebp = convertToWebp;
 exports.sprites = sprites;
 exports.spritesPNG = spritesPNG;
 exports.watch = watch;

@@ -1,0 +1,92 @@
+.services#services2.circle-section.scrollmagic-elem
+	.circle-bg
+	
+	.services__layer.section__layer.circle__layer
+		.services-circle
+				i
+					+svg2('Group-11')
+		.services-circle1
+				i
+					+svg2('Group-11')
+		.services-circle2
+				i
+					+svg2('Group-11')
+		h2.h2-title.services-title
+			|Наши услуги
+		p.subtitle.services-subtitle
+			|Сделаем все, чтобы о вас узнали в интернете
+		.center
+		
+			.cirle-hidden
+			.f-container
+				.services__left
+					h3.service__h3-title
+						|Дизайн
+					ul.service__list
+						li.service__list-item
+							|Дизайн сайтов
+						li.service__list-item
+							|Разработка логотипа
+						li.service__list-item
+							|Дизайн баннеров
+						li.service__list-item
+							|Анимация
+						li.service__list-item
+							|Визитка
+						li.service__list-item
+							|Юзабилити-аудит
+				.services__center
+					h3.service__h3-title
+						|Разработка
+					ul.service__list
+						li.service__list-item
+							|Landing Page
+						li.service__list-item
+							|Интернет-магазин
+						li.service__list-item
+							|Интернет-каталог
+						li.service__list-item
+							|Корпоративный сайт
+						li.service__list-item
+							|Индивидуальные веб-решения
+				.services__right
+					h3.service__h3-title
+						|Поддержка
+					ul.service__list
+						li.service__list-item
+							|Обслуживание и сопровождение проектов, консультации
+						li.service__list-item
+							|Поисковая оптимизация сайта для Google
+						li.service__list-item
+							|Ускорение работы сайта
+		.center
+			p.subtitle.present-subtitle
+				|Закажите лендинг под ключ и получите полгода бесплатного хостинга в подарок!
+			.f-container
+					.present__content
+						.present__form-wrapper
+							//- h3.present__form-title
+							//- 	|Ваши данные
+							form.present__form#present__form(action="javascript:void(null)" method="POST" onsubmit="")
+									input(type="hidden" name="subject" value="Форма 'Наши услуги'")
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|account_circle
+										.form-group.tap-popup__form-group
+											input#present-name.validate.text-field.tap-popup__text-field(placeholder='' type='text' name="name")
+											label(for='present-name')
+												|Ваше имя
+										
+									.form-group-wrap
+										i.material-icons.tap-popup__form-ico
+											|phone
+										.form-group.tap-popup__form-group
+											input#present-phone.validate.text-field.tap-popup__text-field(type='tel' placeholder='' name="phone")
+											label(for='present-phone')
+												|Ваш телефон
+									.form-group-wrap
+										button.main-btn.present__btn(type='submit' name='action')
+											span.btn-overlay
+											span.btn-text
+												|Отправить
+												i.material-icons.right send

@@ -481,19 +481,32 @@
 
 .tap-popup-wrapper {
 		position: fixed;
-	    right: -348px;
+	 right: -348px;
     bottom: -327px;
 	border-radius: 50%;
 	z-index: 999;
 	width: 800px;
 	height: 800px;
+	// visibility: hidden;
 	pointer-events: none;
 
 	&.open {
 		width: 800px;
+		// visibility: visible;
 		height: 800px;
+		 right: -348px;
+    bottom: -327px;
 		pointer-events: all;
 		.tap-popup-wave {
+		
+			top: 344px;
+    	left: 344px;
+		}
+	}
+}
+
+.tap-popup-wave {
+	&.open {
 			&:before {
 				transform: scale(1);
 			}
@@ -502,7 +515,6 @@
 	    animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 	    transition: opacity .3s, transform .3s, visibility 0s 1s;
 			}
-		}
 	}
 }
 
@@ -523,7 +535,7 @@
 	  position: absolute;
     font-size: 1rem;
     border-radius: 50%;
-    background-color: @accent;
+    background-color: @main-color;
     box-shadow: 0 20px 20px 0 rgba(0,0,0,0.14), 0 10px 50px 0 rgba(0,0,0,0.12), 0 30px 10px -20px rgba(0,0,0,0.2);
     width: 100%;
     height: 100%;
@@ -542,11 +554,11 @@
 }
 
 .tap-popup-wave {
-	position: absolute;
+	position: fixed;
     border-radius: 50%;
     z-index: 10001;
-    top: 344px;
-    left: 344px;
+   	bottom: 0;
+    right: 0;
     width: 112px;
     height: 112px;
 	.btn-control {
@@ -612,7 +624,7 @@
   justify-content: center;
 
 	  label {
-	    color: @accent;
+	    color: @main-color;
 	    position: absolute;
 	    top: 50%;
 	    left: 50%;
@@ -666,6 +678,33 @@
 
 .tap-popup__btn {
 	max-width: 225px;
+		.btn-overlay {
+			color: @white;
+			&:after {
+				background: @white;
+			}
+		}
+
+		&:hover {
+			.btn-overlay{
+				&:after {
+					background: @white;
+					// color: @white;
+				}
+
+			
+			}
+
+				.btn-text {
+					color: @teal;
+				}
+
+			// .btn-text {
+			// 	color: @white;
+			// }
+		
+			
+		}
 	.btn-text {
 		display: flex;
 		align-items: center;
@@ -693,7 +732,78 @@
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 15;
-		color: @accent;
+		color: @main-color;
 		transition: color 0.25s ease;
+	}
+}
+
+
+.tel-popup {
+	.f-container {
+		flex-wrap: wrap;
+	}
+}
+
+.phone-select {
+    outline: 0;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.popup-links-block {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+// .main-btn.swal2-close {
+// 	position: relative;
+// 	    z-index: unset;
+//     top: unset;
+//     right: unset;
+//     align-items: unset;
+//     justify-content: unset;
+//     width: 1.2em;
+//     height: 1.2em;
+//     padding: 0;
+//     overflow: hidden;
+//     transition: color .1s ease-out;
+//     border: none;
+//     border-radius: 0;
+//     background: 0 0;
+//     color: #ccc;
+//     font-family: serif;
+//     font-size: 2.5em;
+//     line-height: 1.2;
+//     cursor: pointer;
+// }
+
+
+.portfolio-popup, .feedback-popup {
+	&.swal2-popup {
+		padding: 0;
+		border-radius: 0;
+		padding-bottom: 15px;
+		width: 100%;
+		max-width: 768px;
+	}
+	.center {
+		padding: 0;
+	}
+
+	img {
+		max-width: 100%;
+		margin-bottom: 25px;
+		width: 100%;
+		// min-height: 280px;
+		// object-fit: cover;
+	}
+
+	.close-alert {
+		margin: 0 auto;
 	}
 }

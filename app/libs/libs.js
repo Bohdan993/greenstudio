@@ -5,6 +5,8 @@
 // import magnificPopup from 'magnific-popup';
 import swiper from 'swiper';
 import waves from 'node-waves';
+import Swal from 'sweetalert2'
+import Lazyload from 'vanilla-lazyload'
 // import M from 'materialize-css';
 
 
@@ -18,5 +20,6 @@ import waves from 'node-waves';
 export {
 	swiper,
 	waves,
-	// M
+	Swal,
+	Lazyload
 }

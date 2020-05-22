@@ -2,48 +2,45 @@ extends pug/base
 
 
 
-//- append vars
-	- meta.keywords = 'список, ключевых, слов'
-	- link.icon = 'favicon.ico'
+append vars
+	- meta.keywords = 'студия разработки сайтов, создание сайтов под ключ в украине, заказать сайт недорого, создание лендингов, создание интернет-магазинов, создание сайтов-визиток, создание сайтов под ключ, разработка логотипа, аудит сайта'
+	- meta.themeColor = '#1a8374'
+	- meta.ogImage = '/img/logo.png'
+	- meta.ogImageWidth = '1200'
+	- meta.ogImageHeight = '630'
+	- meta.ogImageType = 'image/png'
+	- meta.ogImage = '/img/logo-s.png'
+	- meta.ogImageWidth = '1200'
+	- meta.ogImageHeight = '630'
+	- meta.ogImageType = 'image/png'
+	- meta.ogUrl = 'https://greens.studio/'
+	- meta.appleMobileWebAppCapable = 'on'
+	- meta.appleMobileWebAppStatusBarStyle = '#1a8374'
+	- meta.appleMobileWebAppTitle = 'Студия разработки сайтов Greens Studio'
+	- meta.applicationName = 'Студия разработки сайтов Greens Studio'
+	- meta.XUACompatible = 'IE=edge'
+	- link.appleTouchIconPrecomposed = '15'
 	- link.icon16x16 = 'favicon-16x16.png'
 	- link.icon32x32 = 'favicon-32x32.png'
 	- link.icon96x96 = 'favicon-96x96.png'
 	- link.icon128x128 = 'favicon-128x128.png'
 	- link.icon196x196 = 'favicon-196x196.png'
-	- meta.themeColor = '#2e7bff'
-	- meta.appleMobileWebAppCapable = 'on'
-	- meta.appleMobileWebAppStatusBarStyle = '#2e7bff'
-	- meta.appleMobileWebAppTitle = 'Dimbrowsky landing'
-	- meta.applicationName = 'Dimbrowsky landing'
-	- meta.XUACompatible = 'IE=edge'
 
 prepend vars
-	- title = 'Greensstudio topsite'
-	- description = 'Some description'
+	- title = 'Студия разработки сайтов Greens Studio'
+	- description = 'Хотите заказать сайт недорого? Мы занимаемся созданием лендингов, интернет-магазинов и сайтов-визиток под ключ в Украине. Предлагаем разработку логотипа, аудит сайта и поддержку.'
+
 
 
 block head-end
-	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-49981753-1')
-	script.
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-49981753-1');
-	// Global site tag (gtag.js) - Google Ads: 801575133
-	script(async='' src='https://www.googletagmanager.com/gtag/js?id=AW-801575133')
-	script.
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'AW-801575133');
+
 
 		
 block links
-	//- link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' rel='stylesheet')
 	link(href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet")
-	//- link(href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet")
-	link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet")
 	link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+	link(rel="shortcut icon" type="image/png" href="img/favicon.png")
 
 
 
@@ -61,10 +58,13 @@ block content
 			include pug/layouts/header
 			.scrollmagic
 				include pug/layouts/preview
+				include pug/layouts/services2
 				include pug/layouts/portfolio
 				include pug/layouts/feedback
 				include pug/layouts/form
+			//- include pug/layouts/services
 			include pug/layouts/about
+			//- include pug/layouts/present
 			include pug/layouts/footer
 		include pug/layouts/_popup
 

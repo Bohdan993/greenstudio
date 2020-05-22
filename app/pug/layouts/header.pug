@@ -2,26 +2,30 @@ header.header
 	.header__layer.section__layer
 			.f-container
 				.header__top
+					//- .header__top-phone
+					//- 	a(href="tel:380974140212")
+					//- 		|+380974140212
 					.header__top-btn
-						a.main-btn.tap-popup-open(data-open="#callback-popup")
+						a.main-btn
 							span.btn-overlay
 							span.btn-text
 								|Связаться
 					.header__top-logo
-						img.header__logo-img(src="img/logo.svg", alt="Logo")
+						a(href="#")
+							img.header__logo-img(src="img/logo.svg", alt="Logo")
 					nav.header__top-nav
 						ul.header__top-nav-list
 							li.header__top-nav-list-item
-								a.header__top-nav-link(href="#")
+								a.header__top-nav-link.circle-nav-link(href="#portfolio" data-index="2")
 									|Портфолио
 							li.header__top-nav-list-item
-								a.header__top-nav-link(href="#")
+								a.header__top-nav-link.circle-nav-link(href="#feedback" data-index="3")
 									|Отзывы
 							li.header__top-nav-list-item
-								a.header__top-nav-link(href="#")
+								a.header__top-nav-link(href="#about")
 									|О нас
 							li.header__top-nav-list-item
-								a.header__top-nav-link(href="#")
+								a.header__top-nav-link(href="#contacts")
 									|Контакты
 						ul.mobile__nav-list
 							li.mobile__nav-list-item.close-burger-wrap
@@ -29,16 +33,16 @@ header.header
 									span
 									span
 							li.mobile__nav-list-item
-								a.mobile__nav-link(href="#")
+								a.mobile__nav-link.circle-nav-link(href="#portfolio" data-index="2")
 									|Портфолио
 							li.mobile__nav-list-item
-								a.mobile__nav-link(href="#")
+								a.mobile__nav-link.circle-nav-link(href="#feedback" data-index="3")
 									|Отзывы
 							li.mobile__nav-list-item
-								a.mobile__nav-link(href="#")
+								a.mobile__nav-link.circle-nav-link(href="#about")
 									|О нас
 							li.mobile__nav-list-item
-								a.mobile__nav-link(href="#")
+								a.mobile__nav-link.circle-nav-link(href="#contacts")
 									|Контакты
 						.burger-wrap
 							.burger

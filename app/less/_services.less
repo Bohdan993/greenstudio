@@ -1,0 +1,146 @@
+.services {
+	.circle-bg {
+			// background: url(../img/banner-bg.jpg);
+			// background-repeat: no-repeat;
+			// // background-size: contain;
+			// background-position: center;
+			// background: linear-gradient(135deg, @main-color, @teal);
+			background: @teal;
+	}
+}
+.services__layer {
+	position: relative;
+		height: 100%;
+		.fPa(120%, 150%/2, 120px, 150px/2, 1600px, 1920px);
+		    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+			  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: @white;
+
+    // z-index: 1;
+  }
+
+  .center {
+  	&:not(:last-child) {
+  		// margin-bottom: 45px;
+  		.fPa(60%, 90%/2, 60px, 90px/2, 1600px, 1920px);
+  	}
+  }
+
+
+		.f-container {
+			align-items: stretch;
+			& > * {
+				position: relative;
+				z-index: 2;
+			}
+
+
+		}
+}
+
+.services__left, .services__center, .services__right {
+	flex: 0 1 33%;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.service__h3-title {
+	text-align: center;
+	display: inline-block;
+	.fSize(36vw, 36px * (992/1600), 36px, 992px, 1600px);
+	margin-bottom: 45px;
+	position: relative;
+	// margin-left: auto;
+	// margin-right: auto;
+	&:before {
+		content: '';
+		position: absolute;
+		left: -10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 80px;
+		height: 80px;
+		background: @yellow;
+		border-radius: 50%;
+		
+		z-index: -1;
+	}
+}
+
+.services-subtitle {
+	margin-bottom: 45px;
+}
+.service__list {
+	text-align: left;
+}
+
+.service__list-item {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	&:before {
+		content: '';
+		// position: absolute;
+		display: block;
+		position: static;
+		left: 0;
+		top: 0;
+		width: 10px;
+		height: 10px;
+		min-width: 10px;
+		border-radius: 50%;
+		background: @main-color;
+		margin-right: 10px;
+	}
+}
+
+
+.services-circle, .services-circle1, .services-circle2 {
+		position: absolute;
+	top: -5%;
+	width: 30%;
+	height: 30%;
+	left: 15%;
+	z-index: 1;
+	svg {
+		fill: @main-color;
+		width: 100%;
+		height: 100%;
+		opacity: 0.4;
+		g {
+			// opacity: 0.4!important;
+		}
+
+		path {
+			// opacity: 0.4!important;
+		}
+	}
+}
+
+.services-circle1 {
+	width: 15%;
+	height: 15%;
+	top: 40%;
+	left: 65%;
+} 
+
+.services-circle2 {
+	width: 19%;
+	height: 19%;
+	top: 80%;
+	left: 27%;
+}

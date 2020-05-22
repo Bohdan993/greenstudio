@@ -1,22 +1,25 @@
-.feedback.circle-section
+.feedback.circle-section#feedback.scrollmagic-elem
 	.circle-bg
 	.feedback__layer.section__layer.circle__layer
+		h2.h2-title.feedback-title
+				|Отзывы о нас
+		p.subtitle.feedback-subtitle
+			|Результаты клиентов – главный показатель качества нашей работы
 		.cirle-hidden
 		.feedback-circle1.feedback-circle
+			i
+				+svg2('Group-11')
 		.feedback-circle2.feedback-circle
+			i
+				+svg2('Group-11')
 		.feedback-circle3.feedback-circle
 			i
 				+svg2('Group-11')
-		.feedback-circle4.feedback-circle
 		.feedback-circle5.feedback-circle
 			i
 				+svg2('Group-11')
-		.feedback-circle6.feedback-circle
 		.center
-			h2.h2-title.feedback-title
-					|Отзывы о нас
-			p.subtitle.feedback-subtitle
-				|Больше чем мы сами о себе о нас вам раскажут наши благодарные клиенты
+		
 			.f-container
 				.feeaback-left
 					.feedback__tabs-controls
@@ -38,29 +41,60 @@
 											.feedback-text
 												.feedback-text__left
 													.feedback-text__img-wrap
-														img.feedback-text__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+														picture
+															source(type="image/webp" data-srcset="img/Feedback/logo2.webp" class="swiper-lazy")
+															source(type="image/png" data-srcset="img/Feedback/logo2.png" class="swiper-lazy")
+															img(data-src="img/Feedback/logo2.png", class="swiper-lazy" alt="")
 												.feedback-text__right
-													h4.feedback-text__name
-														|Федор Петров
+													.feedback-text__contacts
+														h4.feedback-text__name
+															|Олег
+														.feedback-text__social.social-items
+															i
+																a(href="https://www.facebook.com/olegkysluk" target="_blank" rel="nofollow noopener noreffer")
+																	+svg2('facebook')
+															//- i
+															//- 	+svg2('instagram')
 													p.feedback-text__text
-														|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+														|Привет. Меня зовут Олег. Я являюсь соучредителем компании Pandora.City, мы являемся официальным центром по продаже и установке автосигнализаций Pandora.  На рынке больше года. С Александром и студией 
+														span
+															| GREENS.STUDIO 
+														|работаем уже давно. 
+														br
+														br
+														|Началось все с разработки сайта, а так как мы над сайтом работаем постоянно, студия предоставляет нам услуги технической поддержки по доработкам. Работой довольны, все выполняется быстро и качественно. Специалисты на связи 24/7. Помогают и консультируют по всем вопросам. Доступные цены. Если вы ищете грамотных специалистов по разработке сайтов за доступную цену, обращайтесь в студию 
+														span
+															| GREENS.STUDIO.
+
 									.swiper-slide.feedback-slide(data-card="screenshot")
 										//- |скриншот
 										.feedback__tab
 											.feedback-screenshot
-												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
-									.swiper-slide.feedback-slide(data-card="screenshot")
-										//- |скриншот
-										.feedback__tab
-											.feedback-screenshot
-												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+												picture
+													source(type="image/webp" data-srcset="img/Feedback/Screenshot_1.webp" class="swiper-lazy")
+													source(type="image/jpeg" data-srcset="img/Feedback/Screenshot_1.jpg" class="swiper-lazy")
+													img(data-src="img/Feedback/Screenshot_1.jpg", class="swiper-lazy" alt="")
 									.swiper-slide.feedback-slide(data-card="audio")
 										.feedback__tab
 											.feedback-audio
+												
 												.feedback-audio__left
 													.feedback-audio__img-wrap
-															img.feedback-audio__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+														picture
+															source(type="image/webp" data-srcset="img/Feedback/logo1.webp" class="swiper-lazy")
+															source(type="image/png" data-srcset="img/Feedback/logo1.png" class="swiper-lazy")
+															img(data-src="img/Feedback/logo1.png", class="swiper-lazy" alt="")
 												.feedback-audio__right
+													.feedback-audio__contacts
+														h4.feedback-audio__name
+															|Тимофей
+														.feedback-audio__social.social-items
+															i
+																a(href="tg://resolve?domain=@onebrum" target="_blank")
+																		+svg2('telegram')
+															//- i
+															//- 	a(href="	")
+															//- 			+svg2('instagram')
 													.feedback-audio__sound
 															.feedback-audio__sound-progress-wrap
 																.feedback-audio__sound-progress
@@ -69,58 +103,47 @@
 																	+svg2('play').active-state
 																	+svg2('pause')
 															p.feedback-audio__sound-text
-																|Ниша клиента
-															audio(class="audio-sound" src="audio/Edge-Metalingus.mp3")
-									.swiper-slide.feedback-slide(data-card="audio")
-										.feedback__tab
-											.feedback-audio
-												.feedback-audio__left
-													.feedback-audio__img-wrap
-															img.feedback-audio__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
-												.feedback-audio__right
-													.feedback-audio__sound
-															.feedback-audio__sound-progress-wrap
-																.feedback-audio__sound-progress
-															.feedback-audio__sound-icons
-																i.feedback-audio__sound-play(title="Прослушать")
-																	+svg2('play').active-state
-																	+svg2('pause')
-															p.feedback-audio__sound-text
-																|Ниша клиента
-															audio(class="audio-sound" src="audio/Edge-Metalingus.mp3")
+																|
+															audio(class="audio-sound" src="audio/audio_2020-02-28_17-39-28.ogg")
 									.swiper-slide.feedback-slide(data-card="text")
 										//- |текст
 										.feedback__tab
 											.feedback-text
 												.feedback-text__left
 													.feedback-text__img-wrap
-														img.feedback-text__img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+														picture
+															source(type="image/webp" data-srcset="img/Feedback/logo3.webp" class="swiper-lazy")
+															source(type="image/png" data-srcset="img/Feedback/logo3.png" class="swiper-lazy")
+															img(data-src="img/Feedback/logo3.png", class="swiper-lazy" alt="")
 												.feedback-text__right
-													h4.feedback-text__name
-														|Петр Васильев
+													.feedback-text__contacts
+														h4.feedback-text__name
+															|Ольга
+														.feedback-text__social.social-items
+															i
+																a(href="https://www.facebook.com/suvakolha" target="_blank" rel="nofollow noopener noreffer")
+																	+svg2('facebook')
+															//- i
+															//- 	+svg2('instagram')
 													p.feedback-text__text
-														|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+														|Здравствуйте. Мы автосервис в городе Вишневое. С Сашей познакомились когда делали наш сайт https://vic-service.com.ua/. Делали полное программирование сайта и продолжаем работать сейчас. Все было выполнено хорошо, качественно и быстро. 
+														br
+														br
+														|Работой доволен, сейчас 75% клиентов приходят с сайта. Если ищите подрядчиков, которые за доступную цену сделают сайт под ключ, рекомендую обратиться в студию
+														span 
+															|GREENS.STUDIO. 
+														|Ребята, спасибо за работу.
 									.swiper-slide.feedback-slide(data-card="video")
 										//- |видео
 										.feedback__tab
-											.feedback-video(data-video="hBj0-dIU8HI")
-												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
+											.feedback-video(data-video="rzbssLSLyr4")
+												picture
+													source(type="image/webp" data-srcset="img/Feedback/Screenshot1.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Feedback/Screenshot1.png" class="swiper-lazy")
+													img(data-src="img/Feedback/Screenshot1.png", class="swiper-lazy" alt="")
 												.play
-									.swiper-slide.feedback-slide(data-card="video")
-										//- |видео2
-										.feedback__tab
-											.feedback-video(data-video="hBj0-dIU8HI")
-												img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
-												.play
-				
-										//- .feedback__tab
-										//- 	img(src="https://demo.phlox.pro/music-band/wp-content/uploads/sites/95/2019/02/anthony-delanoix-15928-unsplash-1-1024x576.jpg", alt="")
-					//- .feedback-right
-							//- .swiper-pagination
-							//- .swiper-controls
-							//- 	.swiper-control-prev.btn-control.wave
-							//- 		i.large.material-icons
-							//- 			|keyboard_arrow_up
-							//- 	.swiper-control-next.btn-control.wave
-							//- 		i.large.material-icons
-							//- 			|keyboard_arrow_down
+				.feedback-right
+					picture
+						source(type="image/webp" data-srcset="img/feedback-img.webp")
+						source(type="image/png" data-srcset="img/feedback-img.png")
+						img.feedback__img-bg(data-src="img/feedback-img.png", alt="Background"  class="lazy")

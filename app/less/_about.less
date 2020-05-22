@@ -3,26 +3,167 @@
 }
 
 .about__layer {
+	position: relative;
 	height: 100%;
 	.fPa(120%, 150%/2, 120px, 150px/2, 1600px, 1920px);
-	min-height: 840px;
+	// min-height: 840px;
+	 &:after {
+    content: '';
+    width: 100%;
+    height: 90%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    background: url(../img/about-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    z-index: -1;
+  }
 
 	.center, .f-container {
 		height: 100%;
 	}
 
-	.f-container
+	// .center {
+	// 	overflow-x: hidden;
+	// }
+
+	.f-container {
+		flex-wrap: nowrap;
+	}
 }
 
 
 .about__right {
 	flex: 0 1 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		margin-left: auto;
+	}
+	
+	
 }
 
 
 .about__left {
+	margin-right: 25px;
+	position: relative;
 	flex: 0 1 40%;
 	img {
 		max-width: 360px;
+		margin: 0 auto;
+	}
+
+	opacity: 0;
+	&.animation {
+		.animate(slideTop, .5s, ease-in, forwards);
 	}
 }
+
+
+.about__shapes {
+	position: absolute;	
+	width: 	100%;
+	max-width: 100%;
+	top: 	50%;
+	left:  50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+
+.about__shape1 {
+	width: 	520px;
+	height: 	520px;
+	background: rgba(@main-color, 0.4);
+	border-radius: 50%;
+	margin: 0 auto;
+	position: absolute;	
+	top: 	50%;
+	left:  51%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+
+.about__shape2 {
+	width: 	480px;
+	height: 	480px;
+	background: @teal;
+	border-radius: 50%;
+	margin: 0 auto;
+	min-width: 480px;
+
+}
+
+.about-title {
+	text-align: left;
+}
+
+.about-subtitle {
+	text-align: left;
+}
+
+
+.about__text {
+	&.bold {
+		font-weight: 600;
+	}
+	&.quote {
+		font-style: italic;
+		background: #f1f5f6;
+		padding: 20px;
+		border-radius: 15px;
+		position: relative;
+		margin-left: 10px;
+		&:before {
+			content: '';
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			left: -35px;
+			transform: translateY(-50%);
+			position: absolute;
+			background: url(../img/About/quote.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	&:not(:last-child) {
+		margin-bottom: 15px;
+	}
+
+	span {
+		color: @main-color;
+	}
+}
+
+.about__founder-info {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.about__founder-text {
+	font-style: italic;
+}
+
+.about__social {
+	justify-content: center;
+	max-width: unset;
+
+	i:not(:last-child) {
+		margin-right: 10px;
+	}
+}
+

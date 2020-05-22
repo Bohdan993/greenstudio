@@ -90,6 +90,9 @@
 
 
 
+
+
+
 @base:1920;
 /* Формула для перевода пикселей в проценты */
 .pxtp( @pixel:@base ) {
@@ -112,4 +115,14 @@
 	top: 0;
 	left: 0;
 	z-index: 1;
+}
+
+
+
+.animate(@name: some, @time: 1s, @timing-fun: ease-in, @state: forwards) {
+	 animation-name: @name;
+  animation-duration: @time;
+  animation-timing-function: @timing-fun;
+  animation-fill-mode: @state;
+
 }

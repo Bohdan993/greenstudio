@@ -6,30 +6,30 @@
 	z-index: 99;
 	font-weight: 700;
 	font-family: 'Nunito', sans-serif;
-	&.active {
-		.header__layer {
-			background: @accent;
-			border-color: @accent;
-			height: 100%;
+	// &.active {
+	// 	.header__layer {
+	// 		background: @accent;
+	// 		border-color: @accent;
+	// 		height: 100%;
 
-		}
-		.header__top-nav-link {
-			color: @white;
-		}
+	// 	}
+	// 	.header__top-nav-link {
+	// 		color: @white;
+	// 	}
 
-		.main-btn {
-			background: @white;
-			color: @accent;
-			&:hover {
-      	color: @white;
-    	}
-			& .btn-overlay {
-				&:after {
-					background-color: @teal;
-				}
-			}
-		}
-	}
+	// 	.main-btn {
+	// 		background: @white;
+	// 		color: @accent;
+	// 		&:hover {
+ //      	color: @white;
+ //    	}
+	// 		& .btn-overlay {
+	// 			&:after {
+	// 				background-color: @teal;
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 
 
@@ -61,6 +61,8 @@
 	justify-content: center;
 	img {
 		max-width: 125px;
+		min-width: 95px;
+		width: 100%;
 	}
 }
 
@@ -68,19 +70,19 @@
 	flex: 0 1 33%;
 	padding: 0 15px;
 	.main-btn {
-		background: @teal;
+		background: @main-color;
 
 		.btn-overlay {
 			color: @white;
 			&:after {
-				background: @accent;
+				background: @teal;
 			}
 		}
 
 		&:hover {
 			.btn-overlay{
 				&:after {
-					background: @accent;
+					background: @teal;
 					// color: @white;
 				}
 			}
@@ -123,6 +125,23 @@
 
 .header__top-nav-link {
 	color: @font-color;
+	position: relative;
+	&:before {
+		content: '';
+		bottom: 0;
+		position: absolute;
+		width: 0;
+		height: 2px;
+		background: @main-color;
+		left: 0;
+		transition: width 0.25s ease-in;
+	}
+
+	&:hover {
+		&:before {
+			width: 100%;
+		}
+	}
 }
 
 
@@ -131,10 +150,10 @@
 	top: 0;
 	right: 0;
 	width: 100%;
-	transform: translateX(100%);
-	max-width: 360px;
+	transform: translateX(320px);
+	max-width: 320px;
 	height: 100vh;
-	background: @accent;
+	background: @teal;
 }
 
 .mobile__nav-link {
@@ -163,7 +182,7 @@
 	}
 
 	span {
-		background: @accent;
+		background: @teal;
 		display: block;
 		position: absolute;
 		width: 20px;
@@ -182,6 +201,9 @@
 
 		&:nth-child(3) {
 			top: 100%;
+			width: 10px;
+			left: 0;
+			transform: unset;
 		}
 	}
 }

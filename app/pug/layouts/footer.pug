@@ -1,33 +1,60 @@
-.footer
+.footer#contacts
 	.footer__layer.section__layer
-			.center
-				.f-container
-					.footer__left
+			.f-container
+				.footer__left
+					div(style='overflow:hidden;width: 100%;position: relative; height: 100%')
+						iframe(width='100%' class="lazy" height='100%' data-src='https://maps.google.com/maps?width=700&height=440&hl=en&q=%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%BD%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%2075+(Title)&ie=UTF8&t=&z=15&iwloc=B&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
+						div(style='position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;')
+							small(style='line-height: 1.8;font-size: 2px;background: #fff;')
+								| Powered by 
+								a(href='https://embedgooglemaps.com/de/') Embedgooglemaps DE
+								|  &amp; 
+								a(href='http://www.icyphoenix.com/') buy targeted traffic that converts
+						style.
+							#gmap_canvas img{max-width:none!important;background:none!important}
+				.footer__right
+					.footer__right-wrap.anim
 						h2.h2-title.footer-title
 							|Наши контакты
+						p.subtitle.footer-subtitle
+							|Оставьте свои контакты и мы свяжемся с вами в ближайшее время
 						.footer__tel.footer-contact
 							i.material-icons
 								|contact_phone
-							a(href="tel:+380974140212")
-								|+380974140212
+							a(href="tel:+380954631629")
+								|+380954631629
 						.footer__email.footer-contact
 							i.material-icons
 								|mail
-							a(href="mailto:bohdan1trush@gmail.com")
-								|bohdan1trush@gmail.com
+							a(href="mailto:hello@greens.studio")
+								|hello@greens.studio
 						.footer__address.footer-contact
 							i.material-icons
 								|location_on
 							p
-								|г. Житомир, просп. Независимости 71
-					.footer__right
-						div(style='overflow:hidden;width: 700px;position: relative;')
-							iframe(width='700' height='440' src='https://maps.google.com/maps?width=700&height=440&hl=en&q=%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80%2C%20%D0%92%D0%B0%D1%82%D1%83%D1%82%D0%B8%D0%BD%D0%B0%2071+(Title)&ie=UTF8&t=p&z=16&iwloc=B&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
-							div(style='position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;')
-								small(style='line-height: 1.8;font-size: 2px;background: #fff;')
-									| Powered by 
-									a(href='https://embedgooglemaps.com/de/') Embedgooglemaps DE
-									|  &amp; 
-									a(href='http://www.icyphoenix.com/') buy targeted traffic that converts
-							style.
-								#gmap_canvas img{max-width:none!important;background:none!important}
+								span
+									|г. Житомир, просп.
+								span
+									|Независимости, 75
+						.footer__buttons
+							.footer__location-btn
+								a.main-btn(href="https://www.google.com.ua/maps/place/%D0%BF%D1%80%D0%BE%D1%81%D0%BF.+%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8,+75,+%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80,+%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+10001/@50.2736451,28.6846155,17z/data=!3m1!4b1!4m5!3m4!1s0x472c64b2fef6abd9:0xc23092e3d63b0d04!8m2!3d50.2736417!4d28.6868042?hl=ru" target="_blank" rel="nofollow noopener noreffer")
+									i.material-icons
+										|location_searching
+									span.btn-overlay
+									span.btn-text
+										|Как к нам добраться
+							a.footer__to-top-btn(href="#")
+								p
+									|Вернуться наверх
+								.btn-control.wave
+									i.large.material-icons
+										|keyboard_arrow_up
+						
+	#preloader
+		img.preloader__image(src="img/logo.svg", alt="Logo")
+		svg.preloader__svg#L9(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 100 100' enable-background='new 0 0 0 0' xml:space='preserve')
+			path(fill='#2ac3ad' d='M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50')
+
+
+

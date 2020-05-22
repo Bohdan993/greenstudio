@@ -1,21 +1,70 @@
-.about
+.about#about
 	.about__layer.section__layer
 		.center
 			.f-container
-				.about__left
-					img(src="img/mobile-about.png", alt="")
-				.about__right
+				.about__left.anim
 					h2.h2-title.about-title
 						|Немного о нас
 					p.subtitle.about-subtitle
 						|Наша студия здесь, чтобы помочь вам
 					p.about__text
-						|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod.
+						span
+							|Greens Studio
+						|- команда молодых специалистов, которые следят за трендами в сфере веб-технологий и никогда не работают по шаблону. Обратившись к нам, вы получаете поддержку большой команды в режиме 24/7.
 					p.about__text
-						|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod:
+						|Мы занимаемся разработкой сайтов на разных CMS (Битрикс, WordPress, Opencart) под ключ, а также помогаем с их улучшением и продвижением.
+					p.about__text.bold
+						|За результатами каждого проекта следят основатели 
+						span
+							|Greens Studio 
+						|- Александр Чигрин и Богдан Труш. 
+					p.about__text.quote
+						|“В отличие от других агентств, мы не перекладываем ответственность за качество и сроки выполнения задач проект-менеджерам. Сами проводим аналитику и предоставляем обратную связь”.
 					ul.about__services-list
 						li.about__services-list-item
 						li.about__services-list-item
 						li.about__services-list-item
-
+				.about__right
+					.about__founder
+						picture
+							source(type="image/webp" data-srcset="img/About/Alexander.webp")
+							source(type="image/png" data-srcset="img/About/Alexander.png")
+							img(data-src="img/About/Alexander.png", alt="Alexander" class="lazy")
+			
+						.about__founder-info
+							h4.about__founder-name
+								|Александр Чигрин
+							p.about__founder-text
+								|Основатель Greens Studio
+						.about__social.social-items
+							i
+								a(href="https://www.facebook.com/chigrin.alexander" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('facebook')
+							i
+								a(href="https://www.instagram.com/chigrin.alex/" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('instagram')
+							i
+								a(href="tg://resolve?domain=@chigrin_alex" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('telegram')
+					.about__founder
+						picture
+							source(type="image/webp" data-srcset="img/About/Bohdan.webp")
+							source(type="image/png" data-srcset="img/About/Bohdan.png")
+							img(data-src="img/About/Bohdan.png", class="lazy" alt="Bohdan")
+						.about__founder-info
+							h4.about__founder-name
+								|Богдан Труш
+							p.about__founder-text
+								|Основатель Greens Studio
+						.about__social.social-items
+							i
+								a(href="https://www.facebook.com/profile.php?id=100014970242899" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('facebook')
+							i
+								a(href="https://www.instagram.com/b_0_h_dan" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('instagram')
+							i
+								a(href="tg://resolve?domain=@bohdan193" target="_blank" rel="nofollow noreffer noopener")
+									+svg2('telegram')
+					
 					

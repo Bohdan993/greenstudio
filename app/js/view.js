@@ -15,10 +15,6 @@ let portfolioCards = document.querySelectorAll('.portfolio-card');
 portfolioCards = [...portfolioCards];
 let header = document.querySelector('.header');
 
-// let canvas = document.querySelector('canvas');
-
-// let swiperNumCurrent = document.querySelector('.swiper-num-current');
-// let swiperNumAll = document.querySelector('.swiper-num-all');
 
 let tapOpen = document.querySelectorAll('.tap-popup-open');
 tapOpen = [...tapOpen];
@@ -49,6 +45,29 @@ playBtns = [...playBtns];
 
 
 
+
+
+let anim = document.querySelectorAll('.anim');
+
+anim = [...anim];
+
+
+let headerTopBtn = document.querySelector('.header__top-btn');
+
+let circleLink = document.querySelectorAll('.circle-nav-link');
+
+
+let afterHidden = document.querySelector('.after-hidden');
+
+
+let feedbackScreenshots = document.querySelectorAll('[data-card = "screenshot"]');
+
+feedbackScreenshots = [...feedbackScreenshots];
+
+
+
+
+
 export {
 	preview,
 	prevBg,
@@ -65,5 +84,11 @@ export {
 	lastElem,
 	burger,
 	closeBurger,
-	playBtns
+	playBtns, 
+	// opacTaransform,
+	anim,
+	headerTopBtn,
+	circleLink,
+	afterHidden,
+	feedbackScreenshots
 }

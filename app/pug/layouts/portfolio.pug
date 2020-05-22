@@ -1,25 +1,25 @@
-.portfolio.circle-section
+.portfolio.circle-section#portfolio.scrollmagic-elem
 	.circle-bg
 	.portfolio__layer.section__layer.circle__layer
+		h2.h2-title.portfolio-title
+			|Наши работы
+		p.subtitle.portfolio-subtitle
+			|Посмотрите наши кейсы и примите правильное решение
 		.cirle-hidden
 		.portfolio-circle1
+			i
+				+svg2('Group-11')
 		.portfolio-circle2
-		.portfolio-circle3
 			i
 				+svg2('Group-11')
-		.portfolio-circle4
-		.portfolio-circle5
-			i
-				+svg2('Group-11')
-		.portfolio-circle6
 		.center
-			h2.h2-title.portfolio-title
-					|Наши работы
-			p.subtitle.portfolio-subtitle
-				|Посмотрите наши кейсы и сделайте правильное решение
+			
 			.f-container
 					.portfolio-left
-						img.portfolio__img-bg(src="img/portfolio.png", alt="Background")
+						picture
+							source(type="image/webp" data-srcset="img/portfolio-img.webp")
+							source(type="image/png" data-srcset="img/portfolio-img.png")
+							img(src="img/portfolio-img.png", alt="Background" class="lazy")
 					// Slider main container
 					.portfolio-right
 						.swiper-container
@@ -30,30 +30,113 @@
 											.portfolio-card
 												.portfolio-card-hover
 													h3.portfolio-card__title
-														|Проект
-												img(src="https://keyup.ru/wp-content/uploads/2019/07/lider.jpg", alt="")
+														|Argument
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/argumentagency.com-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/argumentagency.com-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/argumentagency.com-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/argumentagency.com-min.png", alt="" class="swiper-lazy")
 									.swiper-slide
 										.portfolio-content
 											.portfolio-card
 												.portfolio-card-hover
 													h3.portfolio-card__title
-														|Проект
-												img(src="https://keyup.ru/wp-content/uploads/2019/07/lider.jpg", alt="")
+														|CleanDom
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/cleandom.in.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/cleandom.in.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/cleandom.in.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/cleandom.in.ua-min.png", alt="", class="swiper-lazy")
 									.swiper-slide
 										.portfolio-content
 											.portfolio-card
 												.portfolio-card-hover
 													h3.portfolio-card__title
-														|Проект
-												img(src="https://keyup.ru/wp-content/uploads/2019/07/lider.jpg", alt="")
+														|SilverDreams
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/dream925.com-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/dream925.com-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/dream925.com-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/dream925.com-min.png", alt="", class="swiper-lazy")
 									.swiper-slide
 										.portfolio-content
 											.portfolio-card
 												.portfolio-card-hover
 													h3.portfolio-card__title
-														|Проект
-												img(src="https://keyup.ru/wp-content/uploads/2018/09/909090.jpg", alt="")
-							//- .swiper-pagination
+														|EasyEurope
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/easyeuropework.com.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/easyeuropework.com.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/easyeuropework.com.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/easyeuropework.com.ua-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|GranitDrev
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/granitdrev.com.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/granitdrev.com.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/granitdrev.com.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/granitdrev.com.ua-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|Mavka
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/mavka.style-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/mavka.style-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/mavka.style-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/mavka.style-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|Oh!Clean
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/ohclean.com.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/ohclean.com.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/ohclean.com.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/ohclean.com.ua-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|PandoraCity
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/pandora.city-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/pandora.city-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/pandora.city-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/pandora.city-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|StroyPartner
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/stroy-pr.com.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/stroy-pr.com.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/stroy-pr.com.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/stroy-pr.com.ua-min.png", alt="", class="swiper-lazy")
+									.swiper-slide
+										.portfolio-content
+											.portfolio-card
+												.portfolio-card-hover
+													h3.portfolio-card__title
+														|Vic-Service
+												picture
+													source(type="image/webp" data-srcset="img/Portfolio/vic-service.com.ua-min.webp" class="swiper-lazy")
+													source(type="image/png" data-srcset="img/Portfolio/vic-service.com.ua-min.png" class="swiper-lazy")
+													//- img(data-src="img/Portfolio/vic-service.com.ua-min.webp", alt="" class="swiper-lazy")
+													img(data-src="img/Portfolio/vic-service.com.ua-min.png", alt="", class="swiper-lazy")
+						.swiper-outside
+							.swiper-pagination
 							.swiper-controls
 								.swiper-control-prev.btn-control.wave
 									i.large.material-icons
@@ -61,7 +144,5 @@
 								.swiper-control-next.btn-control.wave
 									i.large.material-icons
 										|keyboard_arrow_down
-					//- .portfolio__bg-img
-					//- 	img(src="img/card.png", alt="")
 
 
