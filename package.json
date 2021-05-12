@@ -14,7 +14,7 @@
     "node-waves": "^0.7.6",
     "normalize.css": "^8.0.1",
     "nouislider": "^14.1.0",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "wnumb": "^1.2.0"
   },
   "devDependencies": {
